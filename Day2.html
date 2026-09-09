@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        console.log("first repeated number ");
+
+        let numbers = [4,7,2,9,7,5,2]
+        let seen = {}
+        let repeated
+        for(let f=0; f<numbers.length; f++){
+            let currentNumber = numbers[f]
+            if(seen[currentNumber]){
+                repeated = currentNumber
+                break
+            }
+            seen[currentNumber] = true
+        }
+        console.log(repeated);
+
+        console.log("   ");
+        console.log("Day 2 Tasks:");
+        
+        console.log("number from 1 to 10");
+        
+        
+
+        for(let i=0; i<=10; i++){
+            console.log(i);
+        }
+
+        console.log(" ");
+        console.log("even number");
+
+       for(let n=1; n<=20; n++){
+        if(n%2==0){
+            console.log(n);
+        }
+        
+       }
+
+
+       console.log(" ");
+       console.log("star pattern");
+
+       let star = "";
+
+       for (let i = 1; i <= 5; i++) {
+        star = "";
+
+       for (let j = 1; j <= i; j++) {
+        star = star + "* ";
+       }
+
+       console.log(star);
+     }
+        
+       
+
+     console.log(" ");
+       console.log("number pattern");
+     
+       let num = "";
+
+       for (let i = 1; i <= 5; i++) {
+        num = "";
+
+       for (let j = 1; j <= i; j++) {
+        num = num + j;
+       }
+
+       console.log(num);
+     }
+
+     console.log(" ");
+       console.log("MULTIPLICATION TABLE");
+
+     for(let t=1; t<=10; t++){
+        console.log("5 x " + t + " = " + 5*t);
+        
+     }
+       
+    </script>
+</body>
+</html>
