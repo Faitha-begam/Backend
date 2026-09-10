@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let arr = [4,0,7,0,2,9]
+    let zeros=[]
+    let result=[]
+
+    for(let a=0; a<arr.length; a++){
+        if(arr[a]===0){
+            zeros[zeros.length]=arr[a]
+        }
+        else{
+            result[result.length]=arr[a]
+        }
+    }
+    for(let b=0; b<zeros.length; b++){
+        result[result.length] = zeros[b]
+    }
+    console.log(result);
+   
+    
+    
+    // Day 3 tasks
+    
+  console.log("Task 1 - PRIVATE BANK BALANCE");
+
+   const createBankAccount = ()=>{
+        
+        let totalBalance = 5000
+        return checkBalance = () =>{
+           console.log("account balance", totalBalance);
+        }
+    }
+
+    let publicBalance = 100000
+
+    console.log("outside balance", publicBalance);
+    
+    let balance = createBankAccount()
+    balance()
+    
+
+     console.log("Task 2 - DEPOSIT USING CLOSURE");
+
+     const createAccount = ()=>{
+        let balance = 1000
+
+    return {
+       deposit (amount){
+      
+       console.log("deposited amount", amount);
+       balance = balance + amount
+     },
+      getBalance(){
+     
+      console.log("total balance amount: ",balance);
+    }
+    }
+    }
+    
+    let account = createAccount()
+    account.deposit(500)
+    account.deposit(200)
+    account.getBalance()
+
+
+    console.log("Task 3 - PRIVATE COUNTER");
+
+    const createCounter = ()=>{
+        let count = 2
+    
+        return {
+            increment(){
+             count = count+1
+            },
+            decrement(){
+              count = count-1
+            },
+            getCount(){
+              console.log("final count", count);
+              
+            }
+        }
+    
+    }
+
+    //  count += 100
+
+    // console.log('another count', count);
+    
+    let counter = createCounter()
+    
+    counter.increment()
+    counter.increment()
+    counter.increment()
+    counter.decrement()
+    counter.getCount()
+
+
+
+    console.log('Task 4 - EMPLOYEE SALARY PRIVACY');
+
+    const createEmployee = (name, initialSalary) => {
+
+    let salary = initialSalary;
+
+    return {
+        getName() {
+            return name;
+        },
+
+        getSalary() {
+            return salary;
+        },
+
+        increaseSalary(amount) {
+            if (amount >= 0) {
+                salary = salary + amount;
+            }
+        }
+    };
+};
+
+       let employee = createEmployee("Arun", 25000);
+
+       employee.increaseSalary(5000);
+       console.log(employee.getName());
+       console.log(employee.getSalary());
+    
+    </script>
+</body>
+</html>
