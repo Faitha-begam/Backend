@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <script>
+       let num = 58789897866
+       let digit = 0
+       let count = 0
+       while (num>0){
+         digit = num%10
+         count += 1
+         num = (num-digit) / 10
+       }
+       console.log("total count", count);
+       
+       console.log('Day 4 Tasks');
+       console.log(' TASK 1 – PRIVATE SALARY');
+      
+
+       const createEmployee=()=>{
+        let salary = 20000
+
+        return ((amount)=>{
+           salary+=amount
+           console.log(salary);
+           
+        })
+       }
+       let updateSalary = createEmployee()
+       updateSalary(5000)
+       updateSalary(3000)
+
+      console.log('Task 2 - PRODUCT STOCK');
+      
+      const createStock=()=>{
+        let stock = 10
+
+        return {
+            addStock : (newAmount)=>{
+                  stock+=newAmount
+                  console.log('stock after added some new stuffs: ', stock);
+            },
+            sellProduct : (reqProduct)=>{
+                if(stock>reqProduct){
+                    stock-=reqProduct
+                    console.log('updated stock', stock);
+                }
+                else{
+                    console.log(`no stock available -${stock}`);
+                }
+            }
+        }
+      }
+      let product = createStock()
+      product.addStock(5)
+      product.sellProduct(3)
+      product.sellProduct(2)
+      product.sellProduct(12)
+       
+    </script>
+</body>
+</html>
