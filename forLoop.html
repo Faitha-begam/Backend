@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily For Loop</title>
+</head>
+<body>
+    
+    
+    <script>
+
+    //   console.log('Day 4 of for loop');
+      
+    //   let num = [12, 45, 7, 89, 34, 67]
+    //   let first_largest = num[0]
+    //   let sec_largest = num[0]
+
+    //   for(let l=0; l<num.length; l++){
+    //     if(num[l]>first_largest){
+    //         sec_largest = first_largest
+    //         first_largest = num[l]
+    //     }
+    //     else if(num[l] != sec_largest && num[l]<first_largest){
+    //         sec_largest = num[l]
+    //     }
+    //   }
+    //   console.log("second largest is: " + sec_largest);
+
+     let result = [];
+    let leftProduct = 1;
+
+    for (let i = 0; i < nums.length; i++) {
+        result[i] = leftProduct;
+        leftProduct *= nums[i];
+    }
+
+    let rightProduct = 1;
+
+    for (let i = nums.length - 1; i >= 0; i--) {
+        result[i] *= rightProduct;
+        rightProduct *= nums[i];
+    }
+
+    return result;
+      
+    </script>
+</body>
+</html>
