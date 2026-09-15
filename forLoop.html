@@ -27,22 +27,70 @@
     //   }
     //   console.log("second largest is: " + sec_largest);
 
-     let result = [];
-    let leftProduct = 1;
+//     let nums = [2, 2, 3, 4];
 
-    for (let i = 0; i < nums.length; i++) {
-        result[i] = leftProduct;
-        leftProduct *= nums[i];
+//     const productExceptSelf = (nums) => {
+    
+//     let result = [];
+//     let leftProduct = 1;
+
+//     for (let i = 0; i < nums.length; i++) {
+//         result[i] = leftProduct;
+//         leftProduct *= nums[i];
+//     }
+
+//     let rightProduct = 1;
+
+//     for (let i = nums.length - 1; i >= 0; i--) {
+//         result[i] *= rightProduct;
+//         rightProduct *= nums[i];
+//     }
+
+//     return result;
+// };
+// console.log(productExceptSelf(nums));
+
+
+ // -------------------- leetcode problem -----------------------
+
+// let nums = [1, 2, 3, 4];
+// let result = [];
+
+
+// for (let i = 0; i < nums.length; i++) {
+//     let product = 1;
+//     for (let j = 0; j < nums.length; j++) {
+//         if (i !== j) {
+//             product = product * nums[j];
+//         }
+//     }
+//     result[i] = product;
+// }
+// console.log(result);
+
+
+let numbers = [3, 4, -1, 1, 2, 6];
+let positiveNumbers = [];
+for (let i = numbers.length - 1; i >= 0; i--) {
+    if (numbers[i] > 0) {
+        positiveNumbers[positiveNumbers.length] = numbers[i];
     }
-
-    let rightProduct = 1;
-
-    for (let i = nums.length - 1; i >= 0; i--) {
-        result[i] *= rightProduct;
-        rightProduct *= nums[i];
+}
+console.log(positiveNumbers);
+let missingNumber = 1;
+for (let i = 0; i < positiveNumbers.length; i++) {
+    if (positiveNumbers[0] === positiveNumbers[i]) {
+        continue;
+    } else {
+        missingNumber = positiveNumbers[0] + 1;
+        break;
     }
+}
+console.log("Missing number:", missingNumber);
 
-    return result;
+
+
+
       
     </script>
 </body>
