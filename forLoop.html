@@ -89,23 +89,47 @@
 // console.log("Missing number:", missingNumber);
 
 
-let word = "clock";
+// let word = "clock";
 
-for(let r=0; r<word.length; r++){
-    let repeated = false
-     for(let n=0; n<word.length; n++){
-        if(r != n && word[r] === word[n]){
-            repeated = true
-            break
-        }
-     }
-     if(repeated === false){
-        console.log("first repeated character: " , word[r]);
-        break;
+// for(let r=0; r<word.length; r++){
+//     let repeated = false
+//      for(let n=0; n<word.length; n++){
+//         if(r != n && word[r] === word[n]){
+//             repeated = true
+//             break
+//         }
+//      }
+//      if(repeated === false){
+//         console.log("first repeated character: " , word[r]);
+//         break;
+//     }
+// }
+
+
+let numbers = [4, -2, 7, -5, 8, -1, 3];
+
+let negative = [];
+let positive = [];
+
+for (let n = 0; n < numbers.length; n++) {
+
+    if (numbers[n] < 0) {
+        negative[negative.length] = numbers[n];
+    } else {
+        positive[positive.length] = numbers[n];
     }
 }
 
+let result = [];
 
+for (let n = 0; n < negative.length; n++) {
+    result[result.length] = negative[n];
+}
+
+for (let n = 0; n < positive.length; n++) {
+    result[result.length] = positive[n];
+}
+console.log(result);
 
 
 
