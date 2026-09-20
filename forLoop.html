@@ -106,34 +106,128 @@
 // }
 
 
-let numbers = [4, -2, 7, -5, 8, -1, 3];
+// let numbers = [4, -2, 7, -5, 8, -1, 3];
 
-let negative = [];
-let positive = [];
+// let negative = [];
+// let positive = [];
 
-for (let n = 0; n < numbers.length; n++) {
+// for (let n = 0; n < numbers.length; n++) {
 
-    if (numbers[n] < 0) {
-        negative[negative.length] = numbers[n];
-    } else {
-        positive[positive.length] = numbers[n];
+//     if (numbers[n] < 0) {
+//         negative[negative.length] = numbers[n];
+//     } else {
+//         positive[positive.length] = numbers[n];
+//     }
+// }
+
+// let result = [];
+
+// for (let n = 0; n < negative.length; n++) {
+//     result[result.length] = negative[n];
+// }
+
+// for (let n = 0; n < positive.length; n++) {
+//     result[result.length] = positive[n];
+// }
+// console.log(result);
+
+
+
+// let numbers = [4, 7, 2, 9, 7, 5, 2];
+// let isFound = false
+// for(let d=0; d<numbers.length; d++){
+//     for(let f=0; f<d; f++){
+//         if(numbers[d] == numbers[f]){
+//             console.log("duplicate: " ,numbers[d]);
+//             isFound = true
+//             break
+//         }
+//     }
+//     if(isFound === true){
+//         break
+//     }
+// }
+
+let arr = [2,4,8,1,3,14,5,6]
+let targetAll = 6
+let add = []
+let sub = []
+let mul = []
+let div = []
+for(let a=0; a<arr.length; a++){
+    for(let b=a+1; b<arr.length; b++){
+        
+        if(arr[a] + arr[b] === targetAll ){
+            add.push([arr[a], arr[b]])
+        }
+        if(arr[a] - arr[b]  === targetAll ){
+            sub.push([arr[a], arr[b]])
+        }
+        if(arr[b] - arr[a]  === targetAll ){
+            sub.push([arr[a], arr[b]])
+        }
+        if(arr[a] * arr[b]  === targetAll ){
+            mul.push([arr[a], arr[b]])
+        }
+         if(arr[a] !== 0 && arr[b] / arr[a] === targetAll ){
+            div.push([arr[a], arr[b]])
+        }
+         if(arr[b] !== 0 && arr[a] / arr[b] === targetAll ){
+            div.push([arr[a], arr[b]])
+            
+        }
+    
     }
 }
+    console.log("Addition values which matches with target:" , add);
 
-let result = [];
+    console.log("subtraction values which matches with target:" , sub);
 
-for (let n = 0; n < negative.length; n++) {
-    result[result.length] = negative[n];
-}
+    console.log("multiplication values which matches with target:" , mul);
 
-for (let n = 0; n < positive.length; n++) {
-    result[result.length] = positive[n];
-}
-console.log(result);
+    console.log("division values which matches with target:" , div);
+
+//--------------------------- Day 8 for loop -------------------------------------
+
+// let numbers = [8, 3, 5, 3, 2, 8, 2, 7];
+// let smallestNum = []
+
+// for(let s=0; s<numbers.length; s++){
+//     for(let t=s+1; t<numbers.length; t++){
+//        if(numbers[t] === numbers[s]){
+//         smallestNum[smallestNum.length] = numbers[t]                                                                
+//        }
+//     }
+// }
+// let smallestDuplicate = smallestNum[0]
+// for(let u=0; u<smallestNum.length; u++){
+//     if(smallestNum[u]<smallestDuplicate){
+//         smallestDuplicate = smallestNum[u]
+//     }
+// }
+// console.log("smallest duplicate number is: " , smallestDuplicate);
+
+//--------------------------- Day 9 for loop -------------------------------------     
+
+// Find the first number that appears more than once consecutively.
+
+// let numbers = [4, 7, 7, 3, 5, 5, 8];
+// let consecutive;
 
 
+// for(let c=0; c<numbers.length; c++){
+//     if(numbers[c] === numbers[c+1]){
+//        consecutive = numbers[c]
+//        break
+//     }
+// }
+// console.log("first repeated consecutive number is: ", consecutive);
 
-      
+// logic:
+// 1.compare first element with the next element 
+// 2.if both are matched store it in consecutive 
+// and return the first ever matched element since the question asking for the first consecutive repeated number
+
     </script>
 </body>
 </html>
