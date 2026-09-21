@@ -148,44 +148,44 @@
 //     }
 // }
 
-let arr = [2,4,8,1,3,14,5,6]
-let targetAll = 6
-let add = []
-let sub = []
-let mul = []
-let div = []
-for(let a=0; a<arr.length; a++){
-    for(let b=a+1; b<arr.length; b++){
+// let arr = [2,4,8,1,3,14,5,6]
+// let targetAll = 6
+// let add = []
+// let sub = []
+// let mul = []
+// let div = []
+// for(let a=0; a<arr.length; a++){
+//     for(let b=a+1; b<arr.length; b++){
         
-        if(arr[a] + arr[b] === targetAll ){
-            add.push([arr[a], arr[b]])
-        }
-        if(arr[a] - arr[b]  === targetAll ){
-            sub.push([arr[a], arr[b]])
-        }
-        if(arr[b] - arr[a]  === targetAll ){
-            sub.push([arr[a], arr[b]])
-        }
-        if(arr[a] * arr[b]  === targetAll ){
-            mul.push([arr[a], arr[b]])
-        }
-         if(arr[a] !== 0 && arr[b] / arr[a] === targetAll ){
-            div.push([arr[a], arr[b]])
-        }
-         if(arr[b] !== 0 && arr[a] / arr[b] === targetAll ){
-            div.push([arr[a], arr[b]])
+//         if(arr[a] + arr[b] === targetAll ){
+//             add.push([arr[a], arr[b]])
+//         }
+//         if(arr[a] - arr[b]  === targetAll ){
+//             sub.push([arr[a], arr[b]])
+//         }
+//         if(arr[b] - arr[a]  === targetAll ){
+//             sub.push([arr[a], arr[b]])
+//         }
+//         if(arr[a] * arr[b]  === targetAll ){
+//             mul.push([arr[a], arr[b]])
+//         }
+//          if(arr[a] !== 0 && arr[b] / arr[a] === targetAll ){
+//             div.push([arr[a], arr[b]])
+//         }
+//          if(arr[b] !== 0 && arr[a] / arr[b] === targetAll ){
+//             div.push([arr[a], arr[b]])
             
-        }
+//         }
     
-    }
-}
-    console.log("Addition values which matches with target:" , add);
+//     }
+// }
+//     console.log("Addition values which matches with target:" , add);
 
-    console.log("subtraction values which matches with target:" , sub);
+//     console.log("subtraction values which matches with target:" , sub);
 
-    console.log("multiplication values which matches with target:" , mul);
+//     console.log("multiplication values which matches with target:" , mul);
 
-    console.log("division values which matches with target:" , div);
+//     console.log("division values which matches with target:" , div);
 
 //--------------------------- Day 8 for loop -------------------------------------
 
@@ -227,6 +227,23 @@ for(let a=0; a<arr.length; a++){
 // 1.compare first element with the next element 
 // 2.if both are matched store it in consecutive 
 // and return the first ever matched element since the question asking for the first consecutive repeated number
+
+
+// Check whether a number is a perfect square
+
+let number = 81
+let found = false
+for(let a=1; a<=number; a++){
+    if(a*a === number){
+        console.log("perfect squre", a);
+        found = true
+        break
+    }
+}
+if(found === false){
+    console.log("not a perfect square");
+}
+
 
     </script>
 </body>
