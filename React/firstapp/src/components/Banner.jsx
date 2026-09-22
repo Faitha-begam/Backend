@@ -4,9 +4,11 @@ class Banner extends Component{
 
   render(){
     return(
-       <div>
-         hello im banner
-       </div>
+      <section>
+        <h2>Banner</h2>
+      <h1>Welcome to My Website</h1>
+      <p>Explore our latest updates and information.</p>
+    </section>
     )
   }
 }

@@ -11,13 +11,11 @@ class App extends Component{
   render(){
     return(
       <>
-       <div>
-         hello
-       </div>
        <Navbar/>
        <Banner/>
        <About/>
        <Contact/>
+       <Footer/>
       </>
       )
     }

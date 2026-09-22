@@ -4,9 +4,11 @@ class Navbar extends Component{
 
   render(){
     return(
-       <div>
-         hello im navbar
-       </div>
+    <nav>
+      <h2>Navbar</h2>
+      <strong>My Website</strong>
+      <span>Home | About | Contact</span>
+    </nav>
     )
   }
 }

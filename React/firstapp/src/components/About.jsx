@@ -3,9 +3,10 @@ import { Component } from "react";
 class About extends Component{
     render(){
         return(
-            <div>
-                about
-            </div>
+             <section>
+      <h2>About Us</h2>
+      <p>We create simple and useful web experiences.</p>
+    </section>
         )
     }
 }
