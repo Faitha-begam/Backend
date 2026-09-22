@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>React Complete Notes</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-200">
+
+    <!-- HEADER -->
+    <header class="border-b border-slate-800 bg-slate-950/95 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-5">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-white">
+                        React Complete Notes
+                    </h1>
+
+                    <p class="text-slate-400 mt-1">
+                        React basics, history, components, JSX, DOM, rendering and reconciliation
+                    </p>
+                </div>
+
+                <span class="text-sm bg-blue-500/10 text-blue-400 border border-blue-500/20 px-4 py-2 rounded-full">
+                    React Study Guide
+                </span>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-6xl mx-auto px-6 py-10">
+
+
+        <!-- INTRODUCTION -->
+        <section class="mb-12">
+
+            <div class="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-slate-800 rounded-2xl p-8">
+
+                <span class="text-blue-400 text-sm font-semibold">
+                    BEFORE THE TASKS
+                </span>
+
+                <h2 class="text-3xl font-bold text-white mt-2 mb-4">
+                    What is React?
+                </h2>
+
+                <p class="text-slate-300 leading-8">
+                    React is a JavaScript library for building interactive user interfaces.
+                    It allows developers to build applications using reusable components
+                    and a declarative approach. React was originally created at Facebook
+                    to make complex and frequently changing user interfaces easier to
+                    develop and maintain.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- REACT HISTORY -->
+        <section class="mb-12">
+
+            <div class="flex items-center gap-3 mb-6">
+                <span class="text-blue-400 font-bold text-lg">01</span>
+
+                <h2 class="text-2xl font-bold text-white">
+                    React History & Background
+                </h2>
+            </div>
+
+
+            <div class="grid md:grid-cols-2 gap-5">
+
+
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+
+                    <h3 class="text-lg font-semibold text-white mb-3">
+                        Who created React?
+                    </h3>
+
+                    <p class="text-slate-400 leading-7">
+                        React was originally created by
+                        <strong class="text-white">Jordan Walke</strong>
+                        while he was working at Facebook.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+
+                    <h3 class="text-lg font-semibold text-white mb-3">
+                        When was React introduced?
+                    </h3>
+
+                    <p class="text-slate-400 leading-7">
+                        React was developed internally at Facebook and was
+                        open-sourced publicly on
+                        <strong class="text-white">May 29, 2013</strong>.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+
+                    <h3 class="text-lg font-semibold text-white mb-3">
+                        Why was React created?
+                    </h3>
+
+                    <p class="text-slate-400 leading-7">
+                        As Facebook's applications became more complex and
+                        interactive, manually managing DOM updates became
+                        difficult. React was created to provide a simpler,
+                        declarative and component-based way to build UIs.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+
+                    <h3 class="text-lg font-semibold text-white mb-3">
+                        Problems React addresses
+                    </h3>
+
+                    <ul class="text-slate-400 space-y-2 leading-7">
+                        <li>• Complex UI management</li>
+                        <li>• Manual DOM manipulation</li>
+                        <li>• Repeated UI code</li>
+                        <li>• Difficult UI updates</li>
+                        <li>• Keeping UI and data synchronized</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- TIMELINE -->
+
+            <div class="mt-6 bg-slate-900 border border-slate-800 rounded-xl p-6">
+
+                <h3 class="text-lg font-semibold text-white mb-6">
+                    React Timeline
+                </h3>
+
+                <div class="space-y-5">
+
+                    <div class="flex gap-4">
+                        <span class="text-blue-400 font-bold w-20">
+                            ~2011
+                        </span>
+
+                        <p class="text-slate-400">
+                            React was being developed internally at Facebook.
+                        </p>
+                    </div>
+
+
+                    <div class="flex gap-4">
+                        <span class="text-blue-400 font-bold w-20">
+                            2013
+                        </span>
+
+                        <p class="text-slate-400">
+                            React was open-sourced and made publicly available.
+                        </p>
+                    </div>
+
+
+                    <div class="flex gap-4">
+                        <span class="text-blue-400 font-bold w-20">
+                            2015
+                        </span>
+
+                        <p class="text-slate-400">
+                            React Native expanded React concepts to mobile development.
+                        </p>
+                    </div>
+
+
+                    <div class="flex gap-4">
+                        <span class="text-blue-400 font-bold w-20">
+                            2017
+                        </span>
+
+                        <p class="text-slate-400">
+                            React 16 introduced the Fiber architecture.
+                        </p>
+                    </div>
+
+
+                    <div class="flex gap-4">
+                        <span class="text-blue-400 font-bold w-20">
+                            2018
+                        </span>
+
+                        <p class="text-slate-400">
+                            React Hooks such as useState and useEffect were introduced.
+                        </p>
+                    </div>
+
+
+                    <div class="flex gap-4">
+                        <span class="text-blue-400 font-bold w-20">
+                            2023
+                        </span>
+
+                        <p class="text-slate-400">
+                            The modern react.dev documentation was launched.
+                        </p>
+                    </div>
+
+
+                    <div class="flex gap-4">
+                        <span class="text-blue-400 font-bold w-20">
+                            2025+
+                        </span>
+
+                        <p class="text-slate-400">
+                            React continued evolving with modern React features,
+                            tooling and community governance.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASK 1 -->
+        <section class="mb-12">
+
+            <div class="mb-6">
+
+                <span class="text-blue-400 font-bold">
+                    TASK 1
+                </span>
+
+                <h2 class="text-2xl font-bold text-white mt-1">
+                    React Basics
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-4">
+
+
+                <!-- QUESTION -->
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+
+                    <h3 class="question">
+                        1. What is React?
+                    </h3>
+
+                    <p class="answer">
+                        React is a JavaScript library for building interactive
+                        user interfaces. It allows developers to create UI
+                        using reusable components and a declarative approach.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        2. Why do we use React?
+                    </h3>
+
+                    <p class="answer">
+                        We use React to build interactive and dynamic user
+                        interfaces efficiently. It helps us divide the UI
+                        into reusable components and update only the parts
+                        that need to change.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        3. Is React a library or framework?
+                    </h3>
+
+                    <p class="answer">
+                        React is a JavaScript library mainly focused on
+                        building the user interface. Other features such
+                        as routing and state management can be added using
+                        additional libraries.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        4. What are the main features of React?
+                    </h3>
+
+                    <p class="answer">
+                        The main features of React include component-based
+                        architecture, JSX, declarative UI, Virtual DOM,
+                        one-way data flow, reusable components, props and state.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        5. What is a Single Page Application (SPA)?
+                    </h3>
+
+                    <p class="answer">
+                        A Single Page Application is a web application where
+                        the browser initially loads one main HTML page and
+                        React dynamically updates the required UI without
+                        completely reloading the page for every navigation.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        6. What is declarative UI?
+                    </h3>
+
+                    <p class="answer">
+                        Declarative UI means we describe what the UI should
+                        look like based on the current state or data, and
+                        React handles how the required DOM updates should happen.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASK 2 -->
+        <section class="mb-12">
+
+            <div class="mb-6">
+
+                <span class="text-blue-400 font-bold">
+                    TASK 2
+                </span>
+
+                <h2 class="text-2xl font-bold text-white mt-1">
+                    Components
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-4">
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        1. What is a Component in React?
+                    </h3>
+
+                    <p class="answer">
+                        A component is an independent and reusable piece of
+                        UI in a React application. It can contain its own
+                        UI and logic.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        2. Why do we use Components?
+                    </h3>
+
+                    <p class="answer">
+                        Components help us divide a large UI into smaller
+                        parts, reuse UI in different places, make code easier
+                        to understand and make applications easier to maintain.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        3. What is a Functional Component?
+                    </h3>
+
+                    <p class="answer">
+                        A functional component is a JavaScript function that
+                        returns JSX to describe a part of the user interface.
+                    </p>
+
+                    <pre class="code">
+function Welcome() {
+    return &lt;h1&gt;Welcome&lt;/h1&gt;;
+}</pre>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        4. What is Component-Based Architecture?
+                    </h3>
+
+                    <p class="answer">
+                        Component-based architecture means building an
+                        application by dividing the UI into small, independent
+                        and reusable components.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        5. What is a Component Tree?
+                    </h3>
+
+                    <p class="answer">
+                        A component tree represents the parent-child
+                        relationship between components in a React application.
+                    </p>
+
+                    <pre class="code">
+App
+ ├── Header
+ ├── Main
+ │    ├── ProductList
+ │    └── ProductCard
+ └── Footer</pre>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        6. Why should component names start with a capital letter?
+                    </h3>
+
+                    <p class="answer">
+                        React uses the first letter to distinguish custom
+                        React components from normal HTML elements.
+                        For example, &lt;Header /&gt; is treated as a React
+                        component, while &lt;header&gt; is treated as an HTML element.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        7. What is a reusable component?
+                    </h3>
+
+                    <p class="answer">
+                        A reusable component is a component that can be used
+                        multiple times in different places, often with
+                        different data passed through props.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASK 3 -->
+        <section class="mb-12">
+
+            <div class="mb-6">
+
+                <span class="text-blue-400 font-bold">
+                    TASK 3
+                </span>
+
+                <h2 class="text-2xl font-bold text-white mt-1">
+                    JSX
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-4">
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        1. What is JSX?
+                    </h3>
+
+                    <p class="answer">
+                        JSX stands for JavaScript XML. It is a syntax extension
+                        for JavaScript that allows us to write HTML-like UI
+                        code inside JavaScript.
+                    </p>
+
+                    <pre class="code">
+const element = &lt;h1&gt;Hello&lt;/h1&gt;;</pre>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        2. Why do we use JSX in React?
+                    </h3>
+
+                    <p class="answer">
+                        JSX makes UI code easier to read and write because
+                        we can write the structure of the UI close to the
+                        JavaScript logic that controls it.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        3. Is JSX HTML?
+                    </h3>
+
+                    <p class="answer">
+                        No. JSX is not HTML. It is a syntax extension for
+                        JavaScript that looks similar to HTML and is processed
+                        by React into JavaScript and React elements.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        4. How do we write JavaScript expressions inside JSX?
+                    </h3>
+
+                    <p class="answer">
+                        JavaScript expressions are written inside curly braces.
+                    </p>
+
+                    <pre class="code">
+const name = "Faitha";
+
+return &lt;h1&gt;Hello {name}&lt;/h1&gt;;</pre>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        5. Why do we use className instead of class?
+                    </h3>
+
+                    <p class="answer">
+                        JSX uses className instead of class because class is
+                        a JavaScript keyword. className represents the HTML
+                        class attribute in JSX.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        6. What is React Fragment?
+                    </h3>
+
+                    <p class="answer">
+                        A React Fragment allows us to group multiple JSX
+                        elements without adding an extra HTML element to
+                        the DOM.
+                    </p>
+
+                    <pre class="code">
+&lt;&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+    &lt;p&gt;Welcome&lt;/p&gt;
+&lt;/&gt;</pre>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        7. What are the important JSX rules?
+                    </h3>
+
+                    <ul class="answer space-y-2">
+                        <li>• JSX should have one parent element or Fragment.</li>
+                        <li>• Use className instead of class.</li>
+                        <li>• JavaScript expressions are written inside {}.</li>
+                        <li>• Tags must be properly closed.</li>
+                        <li>• JSX attributes often use camelCase.</li>
+                        <li>• Component names should start with a capital letter.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASK 4 -->
+        <section class="mb-12">
+
+            <div class="mb-6">
+
+                <span class="text-blue-400 font-bold">
+                    TASK 4
+                </span>
+
+                <h2 class="text-2xl font-bold text-white mt-1">
+                    DOM, Virtual DOM & Reconciliation
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-4">
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        1. What is DOM?
+                    </h3>
+
+                    <p class="answer">
+                        DOM stands for Document Object Model. It is the
+                        browser's representation of an HTML document as a
+                        tree of objects or nodes that JavaScript can access
+                        and modify.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        2. What is Virtual DOM?
+                    </h3>
+
+                    <p class="answer">
+                        The Virtual DOM is a lightweight JavaScript
+                        representation of the UI that React uses to determine
+                        what changes are needed in the actual DOM.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        3. What is the difference between DOM and Virtual DOM?
+                    </h3>
+
+                    <div class="overflow-x-auto mt-4">
+
+                        <table class="w-full text-left">
+
+                            <thead>
+                                <tr class="border-b border-slate-700">
+                                    <th class="py-3 text-white">DOM</th>
+                                    <th class="py-3 text-white">Virtual DOM</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="text-slate-400">
+
+                                <tr class="border-b border-slate-800">
+                                    <td class="py-3">Browser's actual UI representation</td>
+                                    <td class="py-3">JavaScript representation of UI</td>
+                                </tr>
+
+                                <tr class="border-b border-slate-800">
+                                    <td class="py-3">Directly affects browser UI</td>
+                                    <td class="py-3">Helps React calculate changes</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="py-3">Part of browser</td>
+                                    <td class="py-3">Managed by React</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        4. What is Reconciliation in React?
+                    </h3>
+
+                    <p class="answer">
+                        Reconciliation is the process React uses to compare
+                        the previous UI representation with the new one and
+                        determine what needs to change in the actual DOM.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        5. What is Diffing?
+                    </h3>
+
+                    <p class="answer">
+                        Diffing is the comparison process where React compares
+                        the previous and new UI representations to find
+                        differences.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        6. How does React identify changes in the UI?
+                    </h3>
+
+                    <p class="answer">
+                        React compares the previous React element tree with
+                        the new React element tree. It uses element types,
+                        positions and keys for list items to determine what
+                        has changed.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        7. Why is key important while rendering lists?
+                    </h3>
+
+                    <p class="answer">
+                        A key gives each list item a stable identity.
+                        React uses keys to identify which items have changed,
+                        been added, removed or reordered.
+                    </p>
+
+                    <pre class="code">
+students.map(student =&gt; (
+    &lt;Student key={student.id} /&gt;
+))</pre>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASK 5 -->
+        <section class="mb-12">
+
+            <div class="mb-6">
+
+                <span class="text-blue-400 font-bold">
+                    TASK 5
+                </span>
+
+                <h2 class="text-2xl font-bold text-white mt-1">
+                    React Rendering Process
+                </h2>
+
+            </div>
+
+
+            <!-- FLOW -->
+
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-6">
+
+                <h3 class="text-lg font-semibold text-white mb-5">
+                    Complete Flow
+                </h3>
+
+                <div class="flex flex-wrap items-center gap-3 text-sm">
+
+                    <span class="flow">
+                        Component
+                    </span>
+
+                    <span>→</span>
+
+                    <span class="flow">
+                        JSX
+                    </span>
+
+                    <span>→</span>
+
+                    <span class="flow">
+                        Rendering
+                    </span>
+
+                    <span>→</span>
+
+                    <span class="flow">
+                        UI Representation
+                    </span>
+
+                    <span>→</span>
+
+                    <span class="flow">
+                        State / Props Change
+                    </span>
+
+                    <span>→</span>
+
+                    <span class="flow">
+                        Re-render
+                    </span>
+
+                    <span>→</span>
+
+                    <span class="flow">
+                        Reconciliation
+                    </span>
+
+                    <span>→</span>
+
+                    <span class="flow">
+                        Diffing
+                    </span>
+
+                    <span>→</span>
+
+                    <span class="flow">
+                        DOM Update
+                    </span>
+
+                    <span>→</span>
+
+                    <span class="flow">
+                        Browser UI
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="space-y-4">
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        1. What is Rendering?
+                    </h3>
+
+                    <p class="answer">
+                        Rendering is the process where React runs a component
+                        and calculates what the UI should look like based on
+                        its current props and state.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        2. What is Re-rendering?
+                    </h3>
+
+                    <p class="answer">
+                        Re-rendering means React runs a component again to
+                        calculate its updated UI after something relevant,
+                        such as state or props, changes.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        3. What causes a component to re-render?
+                    </h3>
+
+                    <p class="answer">
+                        A component can re-render when its state changes,
+                        its props change, its parent re-renders, or a
+                        subscribed context value changes.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        4. Does re-render mean the complete browser DOM is recreated?
+                    </h3>
+
+                    <p class="answer">
+                        No. Re-rendering does not mean that the complete
+                        browser DOM is destroyed and recreated. React
+                        calculates the new UI representation and determines
+                        which parts of the actual DOM need to be updated.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        5. What happens during reconciliation?
+                    </h3>
+
+                    <p class="answer">
+                        React creates a new UI representation, compares it
+                        with the previous one, identifies the differences,
+                        determines the required DOM changes and applies
+                        those changes to the browser.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        6. What is the relationship between Virtual DOM,
+                        Diffing and Reconciliation?
+                    </h3>
+
+                    <p class="answer">
+                        The Virtual DOM represents the UI. When the UI changes,
+                        React creates a new representation and compares it with
+                        the previous one. This comparison is called diffing,
+                        and it is part of the reconciliation process. React
+                        then determines the required changes to the actual DOM.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3 class="question">
+                        7. Explain the React rendering process in your own words.
+                    </h3>
+
+                    <p class="answer">
+                        First, React runs the component and creates a
+                        representation of what the UI should look like.
+                        When state or props change, the component may render
+                        again and produce a new UI representation. React then
+                        compares the new representation with the previous one.
+                        This comparison is part of reconciliation and involves
+                        diffing. React identifies the required changes and
+                        updates only the necessary parts of the actual DOM.
+                        The browser then displays those changes to the user.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK REVISION -->
+        <section class="mb-12">
+
+            <div class="bg-blue-500/10 border border-blue-500/20 rounded-2xl p-8">
+
+                <h2 class="text-2xl font-bold text-white mb-6">
+                    React Quick Revision
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-4">
+
+                    <div class="revision">
+                        <strong>React</strong>
+                        <span>JavaScript library for building UIs</span>
+                    </div>
+
+                    <div class="revision">
+                        <strong>Component</strong>
+                        <span>Reusable piece of UI</span>
+                    </div>
+
+                    <div class="revision">
+                        <strong>JSX</strong>
+                        <span>JavaScript syntax for writing UI</span>
+                    </div>
+
+                    <div class="revision">
+                        <strong>Props</strong>
+                        <span>Data passed from parent to child</span>
+                    </div>
+
+                    <div class="revision">
+                        <strong>State</strong>
+                        <span>Data managed by a component</span>
+                    </div>
+
+                    <div class="revision">
+                        <strong>Rendering</strong>
+                        <span>Calculating what the UI should look like</span>
+                    </div>
+
+                    <div class="revision">
+                        <strong>Re-rendering</strong>
+                        <span>Running the component again after changes</span>
+                    </div>
+
+                    <div class="revision">
+                        <strong>Reconciliation</strong>
+                        <span>Determining required UI updates</span>
+                    </div>
+
+                    <div class="revision">
+                        <strong>Diffing</strong>
+                        <span>Comparing previous and new UI</span>
+                    </div>
+
+                    <div class="revision">
+                        <strong>Key</strong>
+                        <span>Stable identity for list items</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="border-t border-slate-800">
+
+        <div class="max-w-6xl mx-auto px-6 py-8 text-center">
+
+            <p class="text-slate-500 text-sm">
+                React Study Notes • Basics → Components → JSX → DOM → Rendering
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- CUSTOM TAILWIND CLASSES -->
+
+    <style>
+
+        .card {
+            background-color: rgb(15 23 42);
+            border: 1px solid rgb(30 41 59);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+
+        .question {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .answer {
+            color: rgb(148 163 184);
+            line-height: 1.8;
+        }
+
+        .code {
+            background-color: rgb(2 6 23);
+            border: 1px solid rgb(30 41 59);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            overflow-x: auto;
+            color: rgb(125 211 252);
+            font-size: 0.875rem;
+        }
+
+        .flow {
+            background-color: rgb(30 41 59);
+            border: 1px solid rgb(51 65 85);
+            color: rgb(226 232 240);
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+        }
+
+        .revision {
+            background-color: rgb(15 23 42);
+            border: 1px solid rgb(30 41 59);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .revision strong {
+            color: white;
+        }
+
+        .revision span {
+            color: rgb(148 163 184);
+            font-size: 0.875rem;
+        }
+
+    </style>
+
+</body>
+</html>
