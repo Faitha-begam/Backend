@@ -229,22 +229,57 @@
 // and return the first ever matched element since the question asking for the first consecutive repeated number
 
 
+//--------------------------- Day 10 for loop -------------------------------------  
+
 // Check whether a number is a perfect square
 
-let number = 81
-let found = false
-for(let a=1; a<=number; a++){
-    if(a*a === number){
-        console.log("perfect squre", a);
-        found = true
-        break
+// let number = 81
+// let found = false
+// for(let a=1; a<=number; a++){
+//     if(a*a === number){
+//         console.log("perfect squre", a);
+//         found = true
+//         break
+//     }
+// }
+// if(found === false){
+//     console.log("not a perfect square");
+// }
+
+
+
+//--------------------------- Day 11 for loop ----------------------------------------
+
+// Find the first number in an array that is equal to the sum of all the numbers before it.
+
+let numbers = [2, 3, 5, 10, 20];
+
+let sum = 0;
+let found = false;
+
+for (let i = 0; i < numbers.length; i++) {
+
+    if (numbers[i] === sum) {
+        console.log("Number:", numbers[i]);
+        found = true;
+        break;
     }
+
+    sum = sum + numbers[i];
 }
-if(found === false){
-    console.log("not a perfect square");
+if (found === false) {
+    console.log("Not found");
 }
 
-
+// create sum and set it to 0 to store the sum of previous numbers.
+// create found and set it to false.
+// usr for loop to check whether the current number is equal to sum.
+// if they are equal, the current number is the sum of all previous numbers.
+// print the current number and set found to true.
+// use break because we only need the first matching number.
+// if they are not equal, add the current number to sum.
+// continue checking the next number.
+// after the loop, if found is still false, print "Not found".
     </script>
 </body>
 </html>
