@@ -252,24 +252,24 @@
 
 // Find the first number in an array that is equal to the sum of all the numbers before it.
 
-let numbers = [2, 3, 5, 10, 20];
+// let numbers = [2, 3, 5, 10, 20];
 
-let sum = 0;
-let found = false;
+// let sum = 0;
+// let found = false;
 
-for (let i = 0; i < numbers.length; i++) {
+// for (let i = 0; i < numbers.length; i++) {
 
-    if (numbers[i] === sum) {
-        console.log("Number:", numbers[i]);
-        found = true;
-        break;
-    }
+//     if (numbers[i] === sum) {
+//         console.log("Number:", numbers[i]);
+//         found = true;
+//         break;
+//     }
 
-    sum = sum + numbers[i];
-}
-if (found === false) {
-    console.log("Not found");
-}
+//     sum = sum + numbers[i];
+// }
+// if (found === false) {
+//     console.log("Not found");
+// }
 
 // create sum and set it to 0 to store the sum of previous numbers.
 // create found and set it to false.
@@ -280,6 +280,47 @@ if (found === false) {
 // if they are not equal, add the current number to sum.
 // continue checking the next number.
 // after the loop, if found is still false, print "Not found".
+
+
+// Find the longest consecutive sequence of the same digit in a number.
+
+let number = 122233344;
+
+let previousDigit = -1;
+let currentCount = 0;
+let maxCount = 0;
+
+while (number > 0) {
+
+    let digit = number % 10;
+
+    if (digit === previousDigit) {
+        currentCount++;
+    } else {
+        currentCount = 1;
+    }
+
+    if (currentCount > maxCount) {
+        maxCount = currentCount;
+    }
+    previousDigit = digit;
+    number = (number - digit) / 10;
+}
+console.log("Longest consecutive sequence:", maxCount);
+
+// create previousDigit to store the previously checked digit, set it to -1 initially because no digit has been checked yet
+// create currentCount variable to count the current consecutive digits.
+// create maxCount to store the longest consecutive sequence.
+// use a while loop because we need to process each digit of the number.
+// extract the last digit using number % 10.
+// compare the current digit with previousDigit.
+// if both are the matched, increase currentCount.
+// if they are different, reset currentCount to 1 because a new sequence has started.
+// compare currentCount with maxCount.
+// if currentCount is greater, update maxCount.
+// store the current digit in previousDigit.
+// number = (number - digit) / 10 - Remove the last digit from number.
+// finally, maxCount gives the longest consecutive sequence.
     </script>
 </body>
 </html>
