@@ -11,9 +11,20 @@ const About = () => {
           We are learning React by building reusable components.
         </p>
       </div>
+      <dummy/>
     </section>
     </>
   )
+}
+
+export const dummy =()=>{
+    return(
+    <>
+    <div>
+        im dummy
+    </div>
+    </>
+    )
 }
 
 export default About

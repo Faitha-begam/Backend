@@ -1,3 +1,4 @@
+import { dummy } from "./About"
 const ProductCard = () => {
   return (
 <>
@@ -13,8 +14,9 @@ const ProductCard = () => {
       <button className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
         View Product
       </button>
+     
     </div>
-
+ <dummy/>
 </>
   )
 }
