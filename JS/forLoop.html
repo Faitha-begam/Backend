@@ -10,7 +10,7 @@
     
     <script>
 
-    //   console.log('Day 4 of for loop');
+    //   console.log('Day 6 of for loop');
       
     //   let num = [12, 45, 7, 89, 34, 67]
     //   let first_largest = num[0]
@@ -27,6 +27,8 @@
     //   }
     //   console.log("second largest is: " + sec_largest);
 
+
+//--------------------------- leetcode-left,right approach ----------------------------------------
 //     let nums = [2, 2, 3, 4];
 
 //     const productExceptSelf = (nums) => {
@@ -51,7 +53,7 @@
 // console.log(productExceptSelf(nums));
 
 
- // -------------------- leetcode problem -----------------------
+ // -------------------- leetcode problem nested loop -----------------------
 
 // let nums = [1, 2, 3, 4];
 // let result = [];
@@ -68,7 +70,7 @@
 // }
 // console.log(result);
 
-
+//--------------------------- Day 7 for loop ----------------------------------------
 // let numbers = [3, 4, -1, 1, 2, 6];
 // let positiveNumbers = [];
 // for (let i = numbers.length - 1; i >= 0; i--) {
@@ -88,7 +90,7 @@
 // }
 // console.log("Missing number:", missingNumber);
 
-
+//--------------------------- Day 8 for loop ----------------------------------------
 // let word = "clock";
 
 // for(let r=0; r<word.length; r++){
@@ -105,7 +107,7 @@
 //     }
 // }
 
-
+//--------------------------- Day 9 for loop ----------------------------------------
 // let numbers = [4, -2, 7, -5, 8, -1, 3];
 
 // let negative = [];
@@ -120,6 +122,7 @@
 //     }
 // }
 
+//--------------------------- Day 10 for loop ----------------------------------------
 // let result = [];
 
 // for (let n = 0; n < negative.length; n++) {
@@ -132,7 +135,7 @@
 // console.log(result);
 
 
-
+//--------------------------- Day 11 for loop ----------------------------------------
 // let numbers = [4, 7, 2, 9, 7, 5, 2];
 // let isFound = false
 // for(let d=0; d<numbers.length; d++){
@@ -148,6 +151,7 @@
 //     }
 // }
 
+//--------------------------- class la kuduthathu ----------------------------------------
 // let arr = [2,4,8,1,3,14,5,6]
 // let targetAll = 6
 // let add = []
@@ -187,7 +191,8 @@
 
 //     console.log("division values which matches with target:" , div);
 
-//--------------------------- Day 8 for loop -------------------------------------
+
+//--------------------------- Day 12 for loop -------------------------------------
 
 // let numbers = [8, 3, 5, 3, 2, 8, 2, 7];
 // let smallestNum = []
@@ -207,7 +212,7 @@
 // }
 // console.log("smallest duplicate number is: " , smallestDuplicate);
 
-//--------------------------- Day 9 for loop -------------------------------------     
+//--------------------------- Day 13 for loop -------------------------------------     
 
 // Find the first number that appears more than once consecutively.
 
@@ -229,7 +234,7 @@
 // and return the first ever matched element since the question asking for the first consecutive repeated number
 
 
-//--------------------------- Day 10 for loop -------------------------------------  
+//--------------------------- Day 14 for loop -------------------------------------  
 
 // Check whether a number is a perfect square
 
@@ -248,7 +253,7 @@
 
 
 
-//--------------------------- Day 11 for loop ----------------------------------------
+//--------------------------- Day 15 for loop ----------------------------------------
 
 // Find the first number in an array that is equal to the sum of all the numbers before it.
 
@@ -282,6 +287,7 @@
 // after the loop, if found is still false, print "Not found".
 
 
+//--------------------------- Day 16 for loop ----------------------------------------
 // Find the longest consecutive sequence of the same digit in a number.
 
 // let number = 122233344;
@@ -323,6 +329,7 @@
 // finally, maxCount gives the longest consecutive sequence.
 
 
+//--------------------------- Day 17 for loop ----------------------------------------
 // let numbers = [16, 17, 4, 3, 5, 2];
 // let leaders = [];
 // for (let i = 0; i < numbers.length; i++) {
@@ -352,6 +359,7 @@
 // finally, print all the leader elements.
 
 
+//--------------------------- present pannathu ----------------------------------------
 // let trackHeights = [3,5,8,10,9,6,,7,12,8,5,15,5]
 
 // let mostDangerousPeak = 0
@@ -375,6 +383,7 @@
 // console.log("mostDangerousPeak", mostDangerousPeak);
 // console.log("largestDrop", largestDrop);
 
+//--------------------------- Day 18 for loop ----------------------------------------
 // second smallest number in array
 
 // let numbers = [8, 3, 12, 5, 2, 3, 9];
@@ -406,17 +415,67 @@
 // if both conditions are true, update secondSmallest.
 // the undefined check handles the situation where we haven't found a second smallest number yet
 
-// Count Frequency of Target Number
-let numbers = [4, 7, 2, 7, 9, 7, 3, 7]
-let target = 7
-let count =0
 
-for(let d=0; d<numbers.length; d++){
-   if(numbers[d] === target){
-    count++
-   }
-}
-console.log("Number of times target appears: ", count);
+//--------------------------- Day 19 for loop ----------------------------------------
+// Count Frequency of Target Number
+// let numbers = [4, 7, 2, 7, 9, 7, 3, 7]
+// let target = 7
+// let count =0
+
+// for(let d=0; d<numbers.length; d++){
+//    if(numbers[d] === target){
+//     count++
+//    }
+// }
+// console.log("Number of times target appears: ", count);
+
+// let numbers = [3, 6, 9, 12, 16, 18];
+// let difference = numbers[1] - numbers[0];
+// let brokenNumber;
+
+// for (let i = 1; i < numbers.length; i++) {
+
+//     let currentDifference = numbers[i] - numbers[i - 1];
+
+//     if (currentDifference !== difference) {
+//         brokenNumber = numbers[i];
+//         break;
+//     }
+// }
+// if (brokenNumber !== undefined) {
+//     console.log("Pattern breaks at:", brokenNumber);
+// } else {
+//     console.log("Pattern is consistent");
+// }
+
+// first i find the difference between the first two numbers.
+// use this difference as the expected pattern.
+// loop through the remaining numbers.
+// calculate the difference between the current and previous number.
+// compare it with the expected difference.
+// if the difference is different, that number breaks the pattern.
+// store it and stop the loop.
+// if no number breaks the pattern, print that the pattern is consistent.
+
+
+//--------------------------- Day 20 for loop ----------------------------------------
+// Count and Return Numbers Between Two Values
+// let numbers = [5, 12, 18, 25, 10, 7, 20, 15];
+// let firstNum = 10
+// let secondNum = 20
+// let count = 0
+// let newArr = []
+
+// for(let b=0; b<numbers.length; b++){
+//     if(numbers[b] >= firstNum && numbers[b] <= secondNum){
+    
+//         count ++ 
+//         newArr[newArr.length] = numbers[b]
+    
+//     }
+// }
+// console.log(`Numbers Between ${firstNum} and ${secondNum} are:` , newArr);
+// console.log("Total Numbers:", count);
 
     </script>
 </body>
