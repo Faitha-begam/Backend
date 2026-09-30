@@ -1,0 +1,66 @@
+1.  JS vs React vs Angulaer:
+
+JavaScript is the core programming language used to add logic, functionality, and interactivity to web applications.
+
+React is a JavaScript library mainly used for building dynamic user interfaces using reusable components. 
+It is commonly used when we want a flexible and component-based frontend.
+
+Angular is a complete frontend framework based mainly on TypeScript. 
+It provides built-in features like routing, forms, dependency injection, and HTTP services, so it is useful for large and structured applications.
+
+js - language
+react - library for building UI
+angular - complete framework for building applications
+
+
+
+2. ES6+ features mainly used in React
+
+1. Arrow functions - Write shorter functions and callbacks
+2.Destructuring - Easily extract values from props and objects
+3.Spread operator - Copy/update objects and arrays
+4. Array methods - map(), filter(), etc. are commonly used for rendering data and 
+these features returns something while for loops can't (every features are an expression in ES6+)
+
+
+
+
+3. DOM vs React — Why did we move towards React?
+
+main purpose:
+DOM is the browser's representation of the HTML page.
+JavaScript uses the DOM when we want to read, change, add, or remove elements on a webpage.
+
+Then why React?
+In a small website, directly manipulating the DOM is manageable.
+But in a large application, there can be many UI elements and frequent changes. Managing all those DOM changes manually can become difficult.
+React solves this by allowing us to build the UI using components and efficiently update the required parts of the page.
+so React introduced a component-based approach and uses a Virtual DOM and reconciliation process to efficiently update the required parts of the actual DOM
+
+
+
+
+4. let, const, var — When do we practically use them?
+
+Use const by default when you don't need to reassign the variable, const does not mean the value itself can never change in every situation. It means the variable cannot be reassigned.
+Use let when the variable needs to be reassigned.
+var was commonly used before ES6, but in modern JavaScript we generally prefer const and let because they have block scope and help prevent accidental redeclaration/reassignment issues.
+
+
+
+
+
+5. How can JavaScript be used to control car functionalities?
+
+JavaScript can be used to model car functionalities using variables, functions, conditions, objects, and events.
+Variables store the car's state, functions perform actions like starting, accelerating and braking, and conditions control when those actions are allowed. 
+Events can trigger these functions based on user interaction. In a real car, JavaScript may be part of higher-level applications or interfaces, while low-level vehicle control is generally handled by embedded systems and specialized automotive software.
+
+ex:
+
+1. Variables store the car's current state, such as speed, fuel level, temperature, and gear.
+2. Functions represent actions such as starting the car, accelerating, braking, changing gear, or turning on headlights.
+3.Conditions (if/else) check whether an action is allowed. For example, the car should not accelerate if the engine is off.
+4. Events respond to user actions, such as pressing an accelerator or brake button.
+5. Objects can group all car-related data and functions together.
+6. DOM manipulation can display the car's current status on a webpage, such as Speed: 60 km/h or Fuel: 40%

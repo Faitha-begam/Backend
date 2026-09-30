@@ -477,6 +477,59 @@
 // console.log(`Numbers Between ${firstNum} and ${secondNum} are:` , newArr);
 // console.log("Total Numbers:", count);
 
+//--------------------------- Day 21 for loop ----------------------------------------
+// let numbers = [4, 8, 6, 10, 7, 5]
+// let sum = 0
+// let average
+// let result
+
+// for (let i = 0; i < numbers.length; i++) {
+//     sum = sum + numbers[i]
+// }
+
+// average = sum / numbers.length;
+
+// for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > average) {
+//         result = numbers[i]
+//         break
+//     }
+// }
+
+// console.log("Average:", average);
+// console.log("First number greater than average:", result);
+
+//--------------------------- Day 22 for loop ----------------------------------------
+let numbers = [4, 10, 15, 22, 30];
+let target = 18;
+let closestNumber = numbers[0];
+let smallestDifference = numbers[0] - target;
+
+if (smallestDifference < 0) {
+    smallestDifference = smallestDifference * -1;
+}
+for (let i = 1; i < numbers.length; i++) {
+    let difference = numbers[i] - target;
+    if (difference < 0) {
+        difference = difference * -1;
+    }
+    if (difference < smallestDifference) {
+        smallestDifference = difference;
+        closestNumber = numbers[i];
+    }
+}
+console.log("Closest number:", closestNumber);
+
+// store the numbers in an array and set the target number as 18
+// assume the first number is the closest number initially
+// calculate the difference between the first number and the target
+// if the difference is negative, multiply it by -1 to make it positive -> smallestDifference = smallestDifference * -1;
+// start a loop from the second number.
+// calculate the difference between the current number and the target
+// if the difference is negative, convert it to positive
+// compare the current difference with smallestDifference
+// if the current difference is smaller update smallestDifference, closestNumber
+// after checking all numbers closestNumber contains the number closest to the target
     </script>
 </body>
 </html>
