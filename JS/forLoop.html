@@ -500,25 +500,25 @@
 // console.log("First number greater than average:", result);
 
 //--------------------------- Day 22 for loop ----------------------------------------
-let numbers = [4, 10, 15, 22, 30];
-let target = 18;
-let closestNumber = numbers[0];
-let smallestDifference = numbers[0] - target;
+// let numbers = [4, 10, 15, 22, 30];
+// let target = 18;
+// let closestNumber = numbers[0];
+// let smallestDifference = numbers[0] - target;
 
-if (smallestDifference < 0) {
-    smallestDifference = smallestDifference * -1;
-}
-for (let i = 1; i < numbers.length; i++) {
-    let difference = numbers[i] - target;
-    if (difference < 0) {
-        difference = difference * -1;
-    }
-    if (difference < smallestDifference) {
-        smallestDifference = difference;
-        closestNumber = numbers[i];
-    }
-}
-console.log("Closest number:", closestNumber);
+// if (smallestDifference < 0) {
+//     smallestDifference = smallestDifference * -1;
+// }
+// for (let i = 1; i < numbers.length; i++) {
+//     let difference = numbers[i] - target;
+//     if (difference < 0) {
+//         difference = difference * -1;
+//     }
+//     if (difference < smallestDifference) {
+//         smallestDifference = difference;
+//         closestNumber = numbers[i];
+//     }
+// }
+// console.log("Closest number:", closestNumber);
 
 // store the numbers in an array and set the target number as 18
 // assume the first number is the closest number initially
@@ -530,7 +530,31 @@ console.log("Closest number:", closestNumber);
 // compare the current difference with smallestDifference
 // if the current difference is smaller update smallestDifference, closestNumber
 // after checking all numbers closestNumber contains the number closest to the target
-    </script>
+
+//--------------------------- Day 23 for loop ----------------------------------------
+
+// Find the Turning Point
+// Find the first temperature where the trend changes from increasing to decreasing
+let temperatures = [18, 21, 25, 28, 24, 20, 22, 26];
+let turningPoint;
+for (let i = 1; i < temperatures.length - 1; i++) {
+    if (temperatures[i] > temperatures[i - 1] && temperatures[i] > temperatures[i + 1]) {
+        turningPoint = temperatures[i];
+        break;
+    }
+}
+console.log("Turning point:", turningPoint);
+
+// start from index 1 because the first value has no left neighbor
+// stop before the last value because it has no right neighbor
+// check whether the current temperature is: greater than the previous temperature, greater than the next temperature
+// if both conditions are true, it is a turning point
+// store that temperature
+// use break because we need only the first turning point
+
+
+
+</script>
 </body>
 </html>
 
