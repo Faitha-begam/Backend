@@ -535,15 +535,15 @@
 
 // Find the Turning Point
 // Find the first temperature where the trend changes from increasing to decreasing
-let temperatures = [18, 21, 25, 28, 24, 20, 22, 26];
-let turningPoint;
-for (let i = 1; i < temperatures.length - 1; i++) {
-    if (temperatures[i] > temperatures[i - 1] && temperatures[i] > temperatures[i + 1]) {
-        turningPoint = temperatures[i];
-        break;
-    }
-}
-console.log("Turning point:", turningPoint);
+// let temperatures = [18, 21, 25, 28, 24, 20, 22, 26];
+// let turningPoint;
+// for (let i = 1; i < temperatures.length - 1; i++) {
+//     if (temperatures[i] > temperatures[i - 1] && temperatures[i] > temperatures[i + 1]) {
+//         turningPoint = temperatures[i];
+//         break;
+//     }
+// }
+// console.log("Turning point:", turningPoint);
 
 // start from index 1 because the first value has no left neighbor
 // stop before the last value because it has no right neighbor
@@ -552,6 +552,30 @@ console.log("Turning point:", turningPoint);
 // store that temperature
 // use break because we need only the first turning point
 
+// Find the Meeting Point
+let runnerA = [2, 5, 8, 12, 15, 18];
+let runnerB = [3, 7, 8, 10, 15, 20];
+let meetingPosition;
+for (let i = 0; i < runnerA.length; i++) {
+    if (runnerA[i] === runnerB[i]) {
+        meetingPosition = runnerA[i];
+        break;
+    }
+}
+if (meetingPosition !== undefined) {
+    console.log("Meeting position:", meetingPosition);
+} else {
+    console.log("No meeting point");
+}
+
+// store both runners' positions in separate arrays.
+// create meetingPosition to store the first matching position.
+// loop through both arrays using the same index.
+// compare runnerA[i] with runnerB[i].
+// if both values are equal, they are at the same position at the same time.
+// store that position in meetingPosition.
+// use break because we only need the first meeting point.
+// if no matching position is found, print "No meeting points
 
 
 </script>
