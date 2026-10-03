@@ -552,21 +552,23 @@
 // store that temperature
 // use break because we need only the first turning point
 
+
+//--------------------------- Day 24 for loop ----------------------------------------
 // Find the Meeting Point
-let runnerA = [2, 5, 8, 12, 15, 18];
-let runnerB = [3, 7, 8, 10, 15, 20];
-let meetingPosition;
-for (let i = 0; i < runnerA.length; i++) {
-    if (runnerA[i] === runnerB[i]) {
-        meetingPosition = runnerA[i];
-        break;
-    }
-}
-if (meetingPosition !== undefined) {
-    console.log("Meeting position:", meetingPosition);
-} else {
-    console.log("No meeting point");
-}
+// let runnerA = [2, 5, 8, 12, 15, 18];
+// let runnerB = [3, 7, 8, 10, 15, 20];
+// let meetingPosition;
+// for (let i = 0; i < runnerA.length; i++) {
+//     if (runnerA[i] === runnerB[i]) {
+//         meetingPosition = runnerA[i];
+//         break;
+//     }
+// }
+// if (meetingPosition !== undefined) {
+//     console.log("Meeting position:", meetingPosition);
+// } else {
+//     console.log("No meeting point");
+// }
 
 // store both runners' positions in separate arrays.
 // create meetingPosition to store the first matching position.
@@ -578,6 +580,23 @@ if (meetingPosition !== undefined) {
 // if no matching position is found, print "No meeting points
 
 
+//--------------------------- Day 25 for loop ----------------------------------------
+// Canceling Transactions
+let transactions = [500, -200, 300, -150, -100, 400]
+let balance = 0
+
+for(let b=0; b<transactions.length; b++){
+        balance += transactions[b]
+}
+console.log("Final Balance: ", balance);
+
+// start balance at 0
+// loop through every transaction
+// add the current transaction to balance
+// positive values increase the balance
+// negative values decrease the balance
+// continue until all transactions are processed
+// print the final balance
 </script>
 </body>
 </html>
