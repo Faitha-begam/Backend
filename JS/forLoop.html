@@ -582,13 +582,13 @@
 
 //--------------------------- Day 25 for loop ----------------------------------------
 // Canceling Transactions
-let transactions = [500, -200, 300, -150, -100, 400]
-let balance = 0
+// let transactions = [500, -200, 300, -150, -100, 400]
+// let balance = 0
 
-for(let b=0; b<transactions.length; b++){
-        balance += transactions[b]
-}
-console.log("Final Balance: ", balance);
+// for(let b=0; b<transactions.length; b++){
+//         balance += transactions[b]
+// }
+// console.log("Final Balance: ", balance);
 
 // start balance at 0
 // loop through every transaction
@@ -597,6 +597,39 @@ console.log("Final Balance: ", balance);
 // negative values decrease the balance
 // continue until all transactions are processed
 // print the final balance
+
+//--------------------------- Day 26 for loop ----------------------------------------
+// Interleave Two Lists
+let teamA = ["A1", "A2", "A3", "A4"];
+let teamB = ["B1", "B2", "B3", "B4"];
+let result = [];
+let maxLength;
+
+if (teamA.length > teamB.length) {
+    maxLength = teamA.length;
+} else {
+    maxLength = teamB.length;
+}
+for (let i = 0; i < maxLength; i++) {
+    if (i < teamA.length) {
+        result[result.length] = teamA[i];
+    }
+
+    if (i < teamB.length) {
+        result[result.length] = teamB[i];
+    }
+}
+
+console.log(result);
+
+// create two arrays, create an empty result array
+// find which array has the greater length and store it in maxLength
+// loop from 0 to maxLength
+// if teamA has an element at the current index, add it to result
+// then check teamB at the same index and add it
+// the two if conditions allow the program to work even when the arrays have different lengths
+// the final result alternates between Team A and Team B while preserving their original order
+
 </script>
 </body>
 </html>
