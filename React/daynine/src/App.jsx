@@ -24,7 +24,7 @@ const App = () => {
   const handleName =()=>{
     setNewName()
   }
-
+``
   return (
     <>
     <h3>Task 1</h3>
