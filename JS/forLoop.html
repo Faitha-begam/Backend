@@ -600,27 +600,27 @@
 
 //--------------------------- Day 26 for loop ----------------------------------------
 // Interleave Two Lists
-let teamA = ["A1", "A2", "A3", "A4"];
-let teamB = ["B1", "B2", "B3", "B4"];
-let result = [];
-let maxLength;
+// let teamA = ["A1", "A2", "A3", "A4"];
+// let teamB = ["B1", "B2", "B3", "B4"];
+// let result = [];
+// let maxLength;
 
-if (teamA.length > teamB.length) {
-    maxLength = teamA.length;
-} else {
-    maxLength = teamB.length;
-}
-for (let i = 0; i < maxLength; i++) {
-    if (i < teamA.length) {
-        result[result.length] = teamA[i];
-    }
+// if (teamA.length > teamB.length) {
+//     maxLength = teamA.length;
+// } else {
+//     maxLength = teamB.length;
+// }
+// for (let i = 0; i < maxLength; i++) {
+//     if (i < teamA.length) {
+//         result[result.length] = teamA[i];
+//     }
 
-    if (i < teamB.length) {
-        result[result.length] = teamB[i];
-    }
-}
+//     if (i < teamB.length) {
+//         result[result.length] = teamB[i];
+//     }
+// }
 
-console.log(result);
+// console.log(result);
 
 // create two arrays, create an empty result array
 // find which array has the greater length and store it in maxLength
@@ -659,8 +659,31 @@ console.log(result);
 
 //--------------------------- Day 28 for loop ----------------------------------------
 // Find the Second Occurrence
-let numbers = [4, 7, 3, 4, 9, 7, 2, 3, 3]
-for(let t=0; )
+let numbers = [4, 7, 3, 4, 9, 7, 2, 3, 3];
+let result
+for (let i = 0; i < numbers.length; i++) {
+    let count = 0
+    for (let j = 0; j < numbers.length; j++) {
+        if(numbers[i] === numbers[j]) {
+            count++
+        }
+    }
+    if(count === 2) {
+        result = numbers[i];
+        break;
+    }
+}
+console.log("First number appearing twice:", result);
+
+// loop through each number using the outer loop
+// set count = 0 for the current number
+// use the inner loop to compare it with every number
+// if the values are equal, increase count
+// after checking the entire array, check count === 2
+// if true, the current number appears exactly twice
+// store it in result
+// use break because we need the first such number
+// output is 4
 </script>
 </body>
 </html>
