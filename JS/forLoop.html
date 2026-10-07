@@ -659,21 +659,21 @@
 
 //--------------------------- Day 28 for loop ----------------------------------------
 // Find the Second Occurrence
-let numbers = [4, 7, 3, 4, 9, 7, 2, 3, 3];
-let result
-for (let i = 0; i < numbers.length; i++) {
-    let count = 0
-    for (let j = 0; j < numbers.length; j++) {
-        if(numbers[i] === numbers[j]) {
-            count++
-        }
-    }
-    if(count === 2) {
-        result = numbers[i];
-        break;
-    }
-}
-console.log("First number appearing twice:", result);
+// let numbers = [4, 7, 3, 4, 9, 7, 2, 3, 3];
+// let result
+// for (let i = 0; i < numbers.length; i++) {
+//     let count = 0
+//     for (let j = 0; j < numbers.length; j++) {
+//         if(numbers[i] === numbers[j]) {
+//             count++
+//         }
+//     }
+//     if(count === 2) {
+//         result = numbers[i];
+//         break;
+//     }
+// }
+// console.log("First number appearing twice:", result);
 
 // loop through each number using the outer loop
 // set count = 0 for the current number
@@ -684,6 +684,25 @@ console.log("First number appearing twice:", result);
 // store it in result
 // use break because we need the first such number
 // output is 4
+
+
+let arr = [344,566,12,72,99,14]
+let largest = arr[0]
+let secLargest = arr[1]
+
+for(let l=0; l<arr.length; l++){
+    if(arr[l]> largest){
+        secLargest=largest
+        largest=arr[l]
+    }
+    if(arr[l]<largest && arr[l]>secLargest){
+        secLargest = arr[l]
+    }
+}
+console.log("largest: ", largest);
+console.log("second largest: ", secLargest);
+
+
 </script>
 </body>
 </html>
