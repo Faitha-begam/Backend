@@ -686,22 +686,46 @@
 // output is 4
 
 
-let arr = [344,566,12,72,99,14]
-let largest = arr[0]
-let secLargest = arr[1]
+// let arr = [344,566,12,72,99,14]
+// let largest = arr[0]
+// let secLargest = arr[1]
 
-for(let l=0; l<arr.length; l++){
-    if(arr[l]> largest){
-        secLargest=largest
-        largest=arr[l]
-    }
-    if(arr[l]<largest && arr[l]>secLargest){
-        secLargest = arr[l]
+// for(let l=0; l<arr.length; l++){
+//     if(arr[l]> largest){
+//         secLargest=largest
+//         largest=arr[l]
+//     }
+//     if(arr[l]<largest && arr[l]>secLargest){
+//         secLargest = arr[l]
+//     }
+// }
+// console.log("largest: ", largest);
+// console.log("second largest: ", secLargest);
+
+
+//--------------------------- Day 29 for loop ----------------------------------------
+// Find the Number With Equal Neighbours
+let numbers = [5, 8, 3, 6, 6, 2, 9];
+let result
+for (let i = 1; i < numbers.length - 1; i++) {
+
+    if (numbers[i] < numbers[i - 1] && numbers[i] < numbers[i + 1]) {
+        result = numbers[i]
+        break
     }
 }
-console.log("largest: ", largest);
-console.log("second largest: ", secLargest);
+console.log("Number:", result); 
 
+
+// start the loop from index 1 because the first number has no left neighbour
+// stop at numbers.length - 1 because the last number has no right neighbour
+// compare the current number with its left neighbour
+// check whether the current number is smaller than the left neighbour
+// check whether it is also smaller than the right neighbour
+// if both conditions are true, we found the required number
+// store it in result
+// use break because we only need the first matching number
+// for 3, 8 > 3 and 6 > 3, so the answer is 3
 
 </script>
 </body>
