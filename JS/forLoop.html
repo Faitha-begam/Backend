@@ -705,16 +705,16 @@
 
 //--------------------------- Day 29 for loop ----------------------------------------
 // Find the Number With Equal Neighbours
-let numbers = [5, 8, 3, 6, 6, 2, 9];
-let result
-for (let i = 1; i < numbers.length - 1; i++) {
+// let numbers = [5, 8, 3, 6, 6, 2, 9];
+// let result
+// for (let i = 1; i < numbers.length - 1; i++) {
 
-    if (numbers[i] < numbers[i - 1] && numbers[i] < numbers[i + 1]) {
-        result = numbers[i]
-        break
-    }
-}
-console.log("Number:", result); 
+//     if (numbers[i] < numbers[i - 1] && numbers[i] < numbers[i + 1]) {
+//         result = numbers[i]
+//         break
+//     }
+// }
+// console.log("Number:", result); 
 
 
 // start the loop from index 1 because the first number has no left neighbour
@@ -726,6 +726,34 @@ console.log("Number:", result);
 // store it in result
 // use break because we only need the first matching number
 // for 3, 8 > 3 and 6 > 3, so the answer is 3
+
+// Find the First Number With More Smaller Values
+let numbers = [8, 3, 10, 5, 2, 7, 6]
+let requiredCount = 4
+let result
+for (let i = 0; i < numbers.length; i++) {
+    let count = 0
+    for (let j = 0; j < numbers.length; j++) {
+        if (numbers[j] < numbers[i]) {
+            count++;
+        }
+    }
+    if (count >= requiredCount) {
+        result = numbers[i];
+        break
+    }
+}
+console.log("Number:", result);
+
+// create requiredCount to decide how many smaller numbers are needed.
+// create result to store the first matching number.
+// use the outer for loop to take each number one by one.
+// set count = 0 for every new number.
+// use the inner for loop to compare the current number with all other numbers.
+// if another number is smaller, increase count.
+// after checking all numbers, compare count with requiredCount.
+// if count >= requiredCount, store the current number in result.
+// use break to stop once the first matching number is found
 
 </script>
 </body>

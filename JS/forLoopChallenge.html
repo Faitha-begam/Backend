@@ -1,0 +1,609 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop Challenge</title>
+</head>
+
+<body>
+    <script>
+        // Day 1
+        // Find repeated number
+        let numbers = [4, 7, 2, 9, 7, 5, 2]
+        let seen = {}
+        let repeated
+
+        for (let f = 0; f < numbers.length; f++) {
+            let currentNumber = numbers[f]
+
+            if (seen[currentNumber]) {
+                repeated = currentNumber
+                break
+            }
+
+            seen[currentNumber] = true
+        }
+
+        console.log(repeated)
+
+        // Day 2
+        // Move All 0s to the end
+        let arr = [4, 0, 7, 0, 2, 9]
+        let zeros = []
+        let result = []
+
+        for (let a = 0; a < arr.length; a++) {
+            if (arr[a] === 0) {
+                zeros[zeros.length] = arr[a]
+            } else {
+                result[result.length] = arr[a]
+            }
+        }
+
+        for (let b = 0; b < zeros.length; b++) {
+            result[result.length] = zeros[b]
+        }
+
+        console.log(result)
+
+        // Day 3
+        // Check Whether a Number is a Palindrome
+        let number = 1221
+        let originalNumber = number
+        let reversedNumber = 0
+
+        while (number > 0) {
+            let digit = number % 10
+            reversedNumber = reversedNumber * 10 + digit
+            number = (number - digit) / 10
+        }
+
+        if (originalNumber === reversedNumber) {
+            console.log("Palindrome")
+        } else {
+            console.log("Not Palindrome")
+        }
+
+        // Day 4
+        // Count digits in a number
+        let num = 58789897
+        let digit = 0
+        let count = 0
+
+        while (num > 0) {
+            digit = num % 10
+            count += 1
+            num = (num - digit) / 10
+        }
+
+        console.log("Total digits in the number:", count)
+
+        // Day 5
+        // Second largest
+        let num = [12, 45, 7, 89, 34, 67]
+        let first_largest = num[0]
+        let sec_largest = num[0]
+
+        for (let l = 0; l < num.length; l++) {
+            if (num[l] > first_largest) {
+                sec_largest = first_largest
+                first_largest = num[l]
+            } else if (
+                num[l] != sec_largest &&
+                num[l] < first_largest
+            ) {
+                sec_largest = num[l]
+            }
+        }
+
+        console.log("Second largest is:", sec_largest)
+
+        // Day 6
+        // Longest word in an array
+        let words = ["cat", "elephant", "dog", "butterfly", "sun"]
+        let longestWord = words[0]
+
+        for (let i = 0; i < words.length; i++) {
+            if (words[i].length > longestWord.length) {
+                longestWord = words[i]
+            }
+        }
+
+        console.log("Longest word:", longestWord)
+
+        // Day 7
+        // Missing positive number
+        let numbers = [3, 4, -1, 1, 2, 6]
+        let positiveNumbers = []
+
+        for (let i = numbers.length - 1; i >= 0; i--) {
+            if (numbers[i] > 0) {
+                positiveNumbers[positiveNumbers.length] = numbers[i]
+            }
+        }
+
+        console.log(positiveNumbers)
+
+        let missingNumber = 1
+
+        for (let i = 0; i < positiveNumbers.length; i++) {
+            if (positiveNumbers[0] === positiveNumbers[i]) {
+                continue
+            } else {
+                missingNumber = positiveNumbers[0] + 1
+                break
+            }
+        }
+
+        console.log("Missing number:", missingNumber)
+
+        // Day 8
+        // First non-repeating char
+        let word = "clock"
+
+        for (let r = 0; r < word.length; r++) {
+            let repeated = false
+
+            for (let n = 0; n < word.length; n++) {
+                if (r != n && word[r] === word[n]) {
+                    repeated = true
+                    break
+                }
+            }
+
+            if (repeated === false) {
+                console.log("First non-repeating character:", word[r])
+                break
+            }
+        }
+
+        // Day 9
+        // Move negative numbers to the beginning
+        let numbers = [4, -2, 7, -5, 8, -1, 3]
+        let negative = []
+        let positive = []
+
+        for (let n = 0; n < numbers.length; n++) {
+            if (numbers[n] < 0) {
+                negative[negative.length] = numbers[n]
+            } else {
+                positive[positive.length] = numbers[n]
+            }
+        }
+
+        let result = []
+
+        for (let n = 0; n < negative.length; n++) {
+            result[result.length] = negative[n]
+        }
+
+        for (let n = 0; n < positive.length; n++) {
+            result[result.length] = positive[n]
+        }
+
+        console.log(result)
+
+        // Day 10
+        // Find the first duplicate number in an array
+        let numbers = [4, 7, 2, 9, 7, 5, 2]
+        let isFound = false
+
+        for (let d = 0; d < numbers.length; d++) {
+            for (let f = 0; f < d; f++) {
+                if (numbers[d] == numbers[f]) {
+                    console.log("Duplicate:", numbers[d])
+                    isFound = true
+                    break
+                }
+            }
+
+            if (isFound === true) {
+                break
+            }
+        }
+
+        // Day 11
+        // Find the smallest number that appears more than once in an array
+        let numbers = [8, 3, 5, 3, 2, 8, 2, 7]
+        let smallestNum = []
+
+        for (let s = 0; s < numbers.length; s++) {
+            for (let t = s + 1; t < numbers.length; t++) {
+                if (numbers[t] === numbers[s]) {
+                    smallestNum[smallestNum.length] = numbers[t]
+                }
+            }
+        }
+
+        let smallestDuplicate = smallestNum[0]
+
+        for (let u = 0; u < smallestNum.length; u++) {
+            if (smallestNum[u] < smallestDuplicate) {
+                smallestDuplicate = smallestNum[u]
+            }
+        }
+
+        console.log("Smallest duplicate number is:", smallestDuplicate)
+
+        // Day 12
+        // Find the first number that appears more than once consecutively
+        let numbers = [4, 7, 7, 3, 5, 5, 8]
+        let consecutive
+
+        for (let c = 0; c < numbers.length; c++) {
+            if (numbers[c] === numbers[c + 1]) {
+                consecutive = numbers[c]
+                break
+            }
+        }
+
+        console.log("First repeated consecutive number is:", consecutive)
+
+        // Day 13
+        // Check whether a number is a perfect square
+        let number = 1
+        let found = false
+
+        for (let a = 1; a <= number; a++) {
+            if (a * a === number) {
+                console.log("Perfect square")
+                found = true
+                break
+            }
+        }
+
+        if (found === false) {
+            console.log("Not a perfect square")
+        }
+
+        // Day 14
+        // Find the first number in an array that is equal to the sum of all the numbers before it
+        let numbers = [2, 3, 5, 10, 20]
+        let sum = 0
+        let found = false
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] === sum) {
+                console.log("Number:", numbers[i])
+                found = true
+                break
+            }
+
+            sum = sum + numbers[i]
+        }
+
+        if (found === false) {
+            console.log("Not found")
+        }
+
+        // Day 15
+        // Find the longest consecutive sequence of the same digit in a number
+        let number = 122233344
+        let previousDigit = -1
+        let currentCount = 0
+        let maxCount = 0
+
+        while (number > 0) {
+            let digit = number % 10
+
+            if (digit === previousDigit) {
+                currentCount++
+            } else {
+                currentCount = 1
+            }
+
+            if (currentCount > maxCount) {
+                maxCount = currentCount
+            }
+
+            previousDigit = digit
+            number = (number - digit) / 10
+        }
+
+        console.log("Longest consecutive sequence:", maxCount)
+
+        // Day 16
+        // Find the Leader Elements
+        let numbers = [16, 17, 4, 3, 5, 2]
+        let leaders = []
+
+        for (let i = 0; i < numbers.length; i++) {
+            let isLeader = true
+
+            for (let j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] <= numbers[j]) {
+                    isLeader = false
+                    break
+                }
+            }
+
+            if (isLeader === true) {
+                leaders[leaders.length] = numbers[i]
+            }
+        }
+
+        console.log("Leader elements:", leaders)
+
+        // Day 17
+        // Second smallest number in array
+        let numbers = [8, 3, 12, 5, 2, 3, 9]
+        let smallest = numbers[0]
+        let secondSmallest
+
+        for (let i = 1; i < numbers.length; i++) {
+            if (numbers[i] < smallest) {
+                secondSmallest = smallest
+                smallest = numbers[i]
+            } else if (
+                numbers[i] !== smallest &&
+                (secondSmallest === undefined || numbers[i] < secondSmallest)
+            ) {
+                secondSmallest = numbers[i]
+            }
+        }
+
+        console.log("Second smallest:", secondSmallest)
+
+        // Day 18
+        // Count Frequency of a Target Number
+        let numbers = [4, 7, 2, 7, 9, 7, 3, 7]
+        let target = 7
+        let count = 0
+
+        for (let d = 0; d < numbers.length; d++) {
+            if (numbers[d] === target) {
+                count++
+            }
+        }
+
+        console.log("Number of times target appears:", count)
+
+        // Day 19
+        // Find the First Number That Breaks the Pattern
+        let numbers = [3, 6, 9, 12, 16, 18]
+        let difference = numbers[1] - numbers[0]
+        let brokenNumber
+
+        for (let i = 1; i < numbers.length; i++) {
+            let currentDifference = numbers[i] - numbers[i - 1]
+
+            if (currentDifference !== difference) {
+                brokenNumber = numbers[i]
+                break
+            }
+        }
+
+        if (brokenNumber !== undefined) {
+            console.log("Pattern breaks at:", brokenNumber)
+        } else {
+            console.log("Pattern is consistent")
+        }
+
+        // Day 20
+        // Count and Return Numbers Between Two Values
+        let numbers = [5, 12, 18, 25, 10, 7, 20, 15]
+        let firstNum = 10
+        let secondNum = 20
+        let count = 0
+        let newArr = []
+
+        for (let b = 0; b < numbers.length; b++) {
+            if (numbers[b] >= firstNum && numbers[b] <= secondNum) {
+                count++
+                newArr[newArr.length] = numbers[b]
+            }
+        }
+
+        console.log(`Numbers between ${firstNum} and ${secondNum} are:`, newArr)
+        console.log("Total Numbers:", count)
+
+        // Day 21
+        // Find the First Number Greater Than the Average
+        let numbers = [4, 8, 6, 10, 7, 5]
+        let sum = 0
+        let average
+        let result
+
+        for (let i = 0; i < numbers.length; i++) {
+            sum = sum + numbers[i]
+        }
+
+        average = sum / numbers.length
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] > average) {
+                result = numbers[i]
+                break
+            }
+        }
+
+        console.log("Average:", average)
+        console.log("First number greater than average:", result)
+
+        // Day 22
+        // Find the Number Closest to a Target
+        let numbers = [4, 10, 15, 22, 30]
+        let target = 18
+        let closestNumber = numbers[0]
+        let smallestDifference = numbers[0] - target
+
+        if (smallestDifference < 0) {
+            smallestDifference = smallestDifference * -1
+        }
+
+        for (let i = 1; i < numbers.length; i++) {
+            let difference = numbers[i] - target
+
+            if (difference < 0) {
+                difference = difference * -1
+            }
+
+            if (difference < smallestDifference) {
+                smallestDifference = difference
+                closestNumber = numbers[i]
+            }
+        }
+
+        console.log("Closest number:", closestNumber)
+
+        // Day 23
+        // Find the Turning Point
+        // Find the first temperature where the trend changes from increasing to decreasing
+        let temperatures = [18, 21, 25, 28, 24, 20, 22, 26]
+        let turningPoint
+
+        for (let i = 1; i < temperatures.length - 1; i++) {
+            if (
+                temperatures[i] > temperatures[i - 1] &&
+                temperatures[i] > temperatures[i + 1]
+            ) {
+                turningPoint = temperatures[i]
+                break
+            }
+        }
+
+        console.log("Turning point:", turningPoint)
+
+        // Day 24
+        // Find the Meeting Point
+        let runnerA = [2, 5, 8, 12, 15, 18]
+        let runnerB = [3, 7, 8, 10, 15, 20]
+        let meetingPosition
+
+        for (let i = 0; i < runnerA.length; i++) {
+            if (runnerA[i] === runnerB[i]) {
+                meetingPosition = runnerA[i]
+                break
+            }
+        }
+
+        if (meetingPosition !== undefined) {
+            console.log("Meeting position:", meetingPosition)
+        } else {
+            console.log("No meeting point")
+        }
+
+        // Day 25
+        // Transaction Balance Tracker
+        let transactions = [500, -200, 300, -150, -100, 400]
+        let balance = 0
+
+        for (let b = 0; b < transactions.length; b++) {
+            balance += transactions[b]
+        }
+
+        console.log("Final Balance:", balance)
+
+        // Day 26
+        // Interleave Two Lists
+        let teamA = ["A1", "A2", "A3", "A4"]
+        let teamB = ["B1", "B2", "B3", "B4"]
+        let result = []
+        let maxLength
+
+        if (teamA.length > teamB.length) {
+            maxLength = teamA.length
+        } else {
+            maxLength = teamB.length
+        }
+
+        for (let i = 0; i < maxLength; i++) {
+            if (i < teamA.length) {
+                result[result.length] = teamA[i]
+            }
+
+            if (i < teamB.length) {
+                result[result.length] = teamB[i]
+            }
+        }
+
+        console.log(result)
+
+        // Day 27
+        // Find the Missing Pair / Unique Number
+        let numbers = [4, 7, 2, 4, 9, 2, 7]
+        let uniqueNumber
+
+        for (let i = 0; i < numbers.length; i++) {
+            let count = 0
+
+            for (let j = 0; j < numbers.length; j++) {
+                if (numbers[i] === numbers[j]) {
+                    count++
+                }
+            }
+
+            if (count === 1) {
+                uniqueNumber = numbers[i]
+                break
+            }
+        }
+
+        console.log("Unique number:", uniqueNumber)
+
+        // Day 28
+        // Find the Second Occurrence
+        let numbers = [4, 7, 3, 4, 9, 7, 2, 3, 3]
+        let result
+
+        for (let i = 0; i < numbers.length; i++) {
+            let count = 0
+
+            for (let j = 0; j < numbers.length; j++) {
+                if (numbers[i] === numbers[j]) {
+                    count++
+                }
+            }
+
+            if (count === 2) {
+                result = numbers[i]
+                break
+            }
+        }
+
+        console.log("First number appearing twice:", result)
+
+        // Day 29
+        // Find the Number With Greater Neighbours
+        let numbers = [5, 8, 3, 6, 6, 2, 9]
+        let result
+
+        for (let i = 1; i < numbers.length - 1; i++) {
+            if (
+                numbers[i] < numbers[i - 1] &&
+                numbers[i] < numbers[i + 1]
+            ) {
+                result = numbers[i]
+                break
+            }
+        }
+
+        console.log("Number:", result)
+
+        // Day 30
+        // Find the First Number With More Smaller Values
+        let numbers = [8, 3, 10, 5, 2, 7, 6]
+        let requiredCount = 4
+        let result
+
+        for (let i = 0; i < numbers.length; i++) {
+            let count = 0
+
+            for (let j = 0; j < numbers.length; j++) {
+                if (numbers[j] < numbers[i]) {
+                    count++
+                }
+            }
+
+            if (count >= requiredCount) {
+                result = numbers[i]
+                break
+            }
+        }
+
+        console.log("Number:", result)
+    </script>
+</body>
+</html>
