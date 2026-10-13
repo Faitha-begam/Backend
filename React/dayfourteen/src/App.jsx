@@ -5,7 +5,7 @@ const App = () => {
   const [storeName, setStoreName] = useState([])
   const [courseName, setCourseName] = useState("")
   const [storeCourse, setStoreCourse] = useState([])
-  const [num, setNum] = useState(0)
+  const [num, setNum] = useState("")
   const [storeNum, setStoreNum] = useState([])
 
   const handleChange=(e)=>{
@@ -22,11 +22,19 @@ const App = () => {
     setStoreCourse((p)=>[...p,courseName])
     setCourseName("")
   }
-  const handleNumber=()=>{
+  const handleNumber=(e)=>{
     setNum(e.target.value)
   }
   const addNumber=()=>{
-    setStoreNum()
+
+    if(num%2===0){
+      alert("even")
+    }
+    else{
+      alert("odd")
+    }
+    setStoreNum((p)=>[...p,num])
+    setNum("")
   }
   return (
     <>
@@ -38,7 +46,7 @@ const App = () => {
       <input type="text" value={courseName} onChange={handleCourse}  placeholder="Enter The Course Name..." />
       <button onClick={addCourse}>Add Course</button>
       <h2 className="font-bold text-2xl text-center">Task 3 – Number List</h2>
-      <input type="text" onChange={handleNumber} placeholder="Enter Number..." />
+      <input type="number" value={num} onChange={handleNumber} placeholder="Enter Number..." />
       <button onClick={addNumber}>Add Number</button>
     </div>
     <div>
@@ -51,8 +59,12 @@ const App = () => {
         <p key={i+1}>{e}</p>
       ))}
     </div>
+    <div>
+      {storeNum.map((e,i)=>(
+        <p key={i+1}>{e}</p>
+      ))}
+    </div>
     
-
     </>
   )
 }
