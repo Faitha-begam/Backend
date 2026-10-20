@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// 1. Find Second Largest Distinct Number
+
+const secondLargestInput = [10, 45, 20, 45, 30]
+let secondLargestFirst = -Infinity
+let secondLargestNext = -Infinity
+
+for (let secondLargestLoop = 0; secondLargestLoop < secondLargestInput.length; secondLargestLoop++) {
+  if (secondLargestInput[secondLargestLoop] > secondLargestFirst) {
+    secondLargestNext = secondLargestFirst
+    secondLargestFirst = secondLargestInput[secondLargestLoop]
+  } else if (
+    secondLargestInput[secondLargestLoop] < secondLargestFirst &&
+    secondLargestInput[secondLargestLoop] > secondLargestNext
+  ) {
+    secondLargestNext = secondLargestInput[secondLargestLoop]
+  }
+}
+
+console.log("1. Second Largest:", secondLargestNext)
+
+
+// 2. Remove Duplicate Numbers
+
+const duplicateInput = [1, 2, 2, 3, 4, 4, 5]
+const duplicateOutput = []
+
+for (let duplicateLoop = 0; duplicateLoop < duplicateInput.length; duplicateLoop++) {
+  let duplicateFound = false
+
+  for (let duplicateCheck = 0; duplicateCheck < duplicateOutput.length; duplicateCheck++) {
+    if (duplicateInput[duplicateLoop] === duplicateOutput[duplicateCheck]) {
+      duplicateFound = true
+      break
+    }
+  }
+
+  if (duplicateFound === false) {
+    duplicateOutput[duplicateOutput.length] = duplicateInput[duplicateLoop]
+  }
+}
+
+console.log("2. Unique Numbers:", duplicateOutput)
+
+
+// 3. Count Character Frequency
+
+const frequencyInput = "banana"
+const frequencyOutput = {}
+
+for (let frequencyLoop = 0; frequencyLoop < frequencyInput.length; frequencyLoop++) {
+  const frequencyCharacter = frequencyInput[frequencyLoop]
+
+  if (frequencyOutput[frequencyCharacter] === undefined) {
+    frequencyOutput[frequencyCharacter] = 1
+  } else {
+    frequencyOutput[frequencyCharacter]++
+  }
+}
+
+console.log("3. Character Frequency:", frequencyOutput)
+
+
+// 4. Employee Salary Filter
+
+const salaryEmployees = [
+  { name: "Arun", salary: 25000 },
+  { name: "Priya", salary: 40000 },
+  { name: "Kumar", salary: 35000 },
+  { name: "Divya", salary: 28000 }
+]
+
+const salarySelected = []
+let salaryTotal = 0
+
+for (let salaryLoop = 0; salaryLoop < salaryEmployees.length; salaryLoop++) {
+  if (salaryEmployees[salaryLoop].salary > 30000) {
+    salarySelected[salarySelected.length] = salaryEmployees[salaryLoop]
+    salaryTotal += salaryEmployees[salaryLoop].salary
+  }
+}
+
+console.log("4. Selected Employees:", salarySelected)
+console.log("4. Total Salary:", salaryTotal)
+
+
+// 5. Reverse Words Without reverse()
+
+const reverseInput = "I love JavaScript"
+const reverseWordList = []
+let reverseCurrentWord = ""
+
+for (let reverseLoop = 0; reverseLoop < reverseInput.length; reverseLoop++) {
+  if (reverseInput[reverseLoop] !== " ") {
+    reverseCurrentWord += reverseInput[reverseLoop]
+  } else {
+    reverseWordList[reverseWordList.length] = reverseCurrentWord
+    reverseCurrentWord = ""
+  }
+}
+
+reverseWordList[reverseWordList.length] = reverseCurrentWord
+
+let reverseOutput = ""
+
+for (let reverseWordLoop = reverseWordList.length - 1; reverseWordLoop >= 0; reverseWordLoop--) {
+  reverseOutput += reverseWordList[reverseWordLoop]
+
+  if (reverseWordLoop !== 0) {
+    reverseOutput += " "
+  }
+}
+
+console.log("5. Reversed Words:", reverseOutput)
+
+
+// ==================================================
+// MEDIUM LEVEL
+// ==================================================
+
+
+// 6. Find First Non-Repeating Character
+
+const nonRepeatInput = "aabbcdecd"
+const nonRepeatFrequency = {}
+
+for (let nonRepeatCount = 0; nonRepeatCount < nonRepeatInput.length; nonRepeatCount++) {
+  const nonRepeatCharacter = nonRepeatInput[nonRepeatCount]
+
+  if (nonRepeatFrequency[nonRepeatCharacter] === undefined) {
+    nonRepeatFrequency[nonRepeatCharacter] = 1
+  } else {
+    nonRepeatFrequency[nonRepeatCharacter]++
+  }
+}
+
+let nonRepeatAnswer = "Not found"
+
+for (let nonRepeatFind = 0; nonRepeatFind < nonRepeatInput.length; nonRepeatFind++) {
+  if (nonRepeatFrequency[nonRepeatInput[nonRepeatFind]] === 1) {
+    nonRepeatAnswer = nonRepeatInput[nonRepeatFind]
+    break
+  }
+}
+
+console.log("6. First Non-Repeating Character:", nonRepeatAnswer)
+
+
+// 7. Group Employees by Department
+
+const groupEmployees = [
+  { name: "Arun", department: "IT", salary: 40000 },
+  { name: "Priya", department: "HR", salary: 30000 },
+  { name: "Kumar", department: "IT", salary: 50000 },
+  { name: "Divya", department: "HR", salary: 35000 },
+  { name: "Ravi", department: "Sales", salary: 25000 }
+]
+
+const groupOutput = {}
+
+for (let groupLoop = 0; groupLoop < groupEmployees.length; groupLoop++) {
+  const groupDepartment = groupEmployees[groupLoop].department
+
+  if (groupOutput[groupDepartment] === undefined) {
+    groupOutput[groupDepartment] = {
+      employees: [],
+      totalSalary: 0
+    }
+  }
+
+  groupOutput[groupDepartment].employees[
+    groupOutput[groupDepartment].employees.length
+  ] = groupEmployees[groupLoop]
+
+  groupOutput[groupDepartment].totalSalary += groupEmployees[groupLoop].salary
+}
+
+console.log("7. Department Summary:", groupOutput)
+
+
+// 8. Shopping Cart Business Logic
+
+const cartItems = [
+  { name: "Laptop", price: 4000, quantity: 1, stock: 2 },
+  { name: "Mouse", price: 500, quantity: 3, stock: 5 },
+  { name: "Keyboard", price: 800, quantity: 10, stock: 4 },
+  { name: "Monitor", price: 2000, quantity: 0, stock: 3 }
+]
+
+let cartSubtotal = 0
+let cartDiscount = 0
+const cartRejected = []
+
+for (let cartLoop = 0; cartLoop < cartItems.length; cartLoop++) {
+  const cartCurrent = cartItems[cartLoop]
+
+  if (
+    cartCurrent.quantity <= 0 ||
+    cartCurrent.quantity > cartCurrent.stock ||
+    cartCurrent.quantity % 1 !== 0
+  ) {
+    cartRejected[cartRejected.length] = {
+      name: cartCurrent.name,
+      reason: "Invalid quantity or insufficient stock"
+    }
+  } else {
+    cartSubtotal += cartCurrent.price * cartCurrent.quantity
+  }
+}
+
+if (cartSubtotal > 5000) {
+  cartDiscount = cartSubtotal * 10 / 100
+}
+
+const cartFinalTotal = cartSubtotal - cartDiscount
+
+console.log("8. Subtotal:", cartSubtotal)
+console.log("8. Discount:", cartDiscount)
+console.log("8. Final Total:", cartFinalTotal)
+console.log("8. Rejected Items:", cartRejected)
+
+
+// 9. Flatten Nested Array Without flat()
+
+const flattenInput = [1, [2, 3], [4, [5, 6]]]
+const flattenOutput = []
+
+function flattenArray(flattenCurrent) {
+  for (let flattenLoop = 0; flattenLoop < flattenCurrent.length; flattenLoop++) {
+    if (Array.isArray(flattenCurrent[flattenLoop])) {
+      flattenArray(flattenCurrent[flattenLoop])
+    } else {
+      flattenOutput[flattenOutput.length] = flattenCurrent[flattenLoop]
+    }
+  }
+}
+
+flattenArray(flattenInput)
+
+console.log("9. Flattened Array:", flattenOutput)
+
+
+// 10. Find Missing Number Without Sorting
+
+const missingInput = [1, 2, 3, 5, 6, 7]
+let missingExpectedSum = 0
+let missingActualSum = 0
+
+for (let missingLoop = 1; missingLoop <= missingInput.length + 1; missingLoop++) {
+  missingExpectedSum += missingLoop
+}
+
+for (let missingCount = 0; missingCount < missingInput.length; missingCount++) {
+  missingActualSum += missingInput[missingCount]
+}
+
+const missingAnswer = missingExpectedSum - missingActualSum
+
+console.log("10. Missing Number:", missingAnswer)
+
+
+// ==================================================
+// HARD LEVEL — QUESTION 2
+// Bank Transaction Validation
+// ==================================================
+
+
+// Transactions are already arranged by timestamp.
+
+const bankInput = [
+  { type: "debit", amount: 2000, timestamp: "09:00" },
+  { type: "credit", amount: 1500, timestamp: "10:00" },
+  { type: "debit", amount: 6000, timestamp: "11:00" },
+  { type: "debit", amount: 1000, timestamp: "12:00" },
+  { type: "credit", amount: 500, timestamp: "13:00" }
+]
+
+let bankBalance = 5000
+const bankRejected = []
+const bankReport = []
+
+for (let bankLoop = 0; bankLoop < bankInput.length; bankLoop++) {
+  const bankCurrent = bankInput[bankLoop]
+  let bankStatus = "Accepted"
+  let bankReason = "Transaction successful"
+
+  if (
+    bankCurrent.amount <= 0 ||
+    (bankCurrent.type !== "credit" && bankCurrent.type !== "debit")
+  ) {
+    bankStatus = "Rejected"
+    bankReason = "Invalid transaction"
+  } else if (
+    bankCurrent.type === "debit" &&
+    bankCurrent.amount > bankBalance
+  ) {
+    bankStatus = "Rejected"
+    bankReason = "Insufficient balance"
+  } else if (bankCurrent.type === "credit") {
+    bankBalance += bankCurrent.amount
+  } else {
+    bankBalance -= bankCurrent.amount
+  }
+
+  if (bankStatus === "Rejected") {
+    bankRejected[bankRejected.length] = {
+      transaction: bankCurrent,
+      reason: bankReason
+    }
+  }
+
+  bankReport[bankReport.length] = {
+    timestamp: bankCurrent.timestamp,
+    type: bankCurrent.type,
+    amount: bankCurrent.amount,
+    status: bankStatus,
+    reason: bankReason,
+    balance: bankBalance
+  }
+}
+
+console.log("11. Transaction Report:", bankReport)
+console.log("11. Rejected Transactions:", bankRejected)
+console.log("11. Final Balance:", bankBalance)
+
+
+// HARD LEVEL — QUESTION 4
+// Inventory Order Allocation
+
+const inventoryStock = {
+  Laptop: 5,
+  Mouse: 10,
+  Keyboard: 4,
+  Monitor: 3
+}
+
+const inventoryOrders = [
+  { orderId: 101, product: "Laptop", quantity: 2 },
+  { orderId: 102, product: "Mouse", quantity: 5 },
+  { orderId: 103, product: "Laptop", quantity: 4 },
+  { orderId: 104, product: "Keyboard", quantity: 2 },
+  { orderId: 105, product: "Monitor", quantity: 0 },
+  { orderId: 106, product: "Tablet", quantity: 1 }
+]
+
+const inventoryReport = []
+
+for (let inventoryLoop = 0; inventoryLoop < inventoryOrders.length; inventoryLoop++) {
+  const inventoryCurrent = inventoryOrders[inventoryLoop]
+  let inventoryStatus = "Accepted"
+  let inventoryReason = "Order allocated successfully"
+
+  if (inventoryCurrent.quantity <= 0 || inventoryCurrent.quantity % 1 !== 0) {
+    inventoryStatus = "Rejected"
+    inventoryReason = "Quantity must be a positive integer"
+  } else if (inventoryStock[inventoryCurrent.product] === undefined) {
+    inventoryStatus = "Rejected"
+    inventoryReason = "Product not found"
+  } else if (inventoryCurrent.quantity > inventoryStock[inventoryCurrent.product]){
+    inventoryStatus = "Rejected"
+    inventoryReason = "Insufficient stock"
+  } else {
+    inventoryStock[inventoryCurrent.product] -= inventoryCurrent.quantity
+  }
+
+  inventoryReport[inventoryReport.length] = {
+    orderId: inventoryCurrent.orderId,
+    product: inventoryCurrent.product,
+    quantity: inventoryCurrent.quantity,
+    status: inventoryStatus,
+    reason: inventoryReason
+  }
+}
+
+console.log("12. Updated Inventory:", inventoryStock)
+console.log("12. Order Report:", inventoryReport)
+    </script>
+</body>
+</html>
