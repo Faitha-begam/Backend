@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Test</title>
+</head>
+<body>
+    <script>
+        
+const employees = [
+    { name: "React", salary: 20467, subject: "node", department: "IT" },
+    { name: "React", salary: 30467, subject: "js", department: "HR" },
+    { name: "React", salary: 60467, subject: "React", department: "IT" },
+    { name: "React", salary: 40000, subject: "Html", department: "Finance" },
+]
+
+let totalSalary = 0
+for (let i = 0; i < employees.length; i++) {
+    totalSalary = totalSalary + employees[i].salary
+}
+let averageSalary = totalSalary / employees.length
+
+console.log("Average Salary:", averageSalary);
+
+
+
+
+    </script>
+</body>
+</html>

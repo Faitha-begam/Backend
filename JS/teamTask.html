@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>team task</title>
+</head>
+<body>
+    <script>
+        let sentence = "i love js"
+        let word = ""
+        let result = ""
+        for(let i = 0; i < sentence.length; i++){
+            if(sentence[i] != " "){
+                word += sentence[i]
+
+            }
+            else{
+                result = word + " " + result
+                word = ""
+            }
+        }
+        result = word + " " + result
+        console.log(result.trim())
+
+        
+        
+        
+        let str = "hello"
+        for(let i = 0; i < str.length; i++){
+
+    let count = 0
+
+    for(let j = 0; j < str.length; j++){
+
+        if(str[i] == str[j]){
+            count++
+        }
+
+    }
+
+    let alreadyCounted = false
+
+    for(let k = 0; k < i; k++){
+        if(str[i] == str[k]){
+            alreadyCounted = true
+            break
+        }
+    }
+
+    if(!alreadyCounted){
+        console.log(str[i] + " = " + count)
+    }
+
+}
+    </script>
+</body>
+</html>
