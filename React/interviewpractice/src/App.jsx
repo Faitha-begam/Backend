@@ -454,9 +454,7 @@ const App = () => {
       <input
         type="text"
         placeholder="Type a user name"
-        value={debounceInput}
-        onChange={(e) => setDebounceInput(e.target.value)}
-      />
+        value={debounceInput} onChange={(e) => setDebounceInput(e.target.value)}/>
 
       {debounceLoading && <p>Searching...</p>}
 

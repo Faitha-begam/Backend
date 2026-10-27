@@ -6,16 +6,17 @@ const App = () => {
   const [products, setProducts] = useState([])
   const [search, setSearch] = useState("")
 
+const fetchProducts = async () => {
  try{
-   const fetchProducts = async () => {
     const res = await fetch("https://dummyjson.com/products")
     const data = await res.json()
     setProducts(data.products)
   }
- }
- catch{
+   catch{
   console.log(error.message)
  }
+ }
+
 
   useEffect(() => {
   fetchProducts()
